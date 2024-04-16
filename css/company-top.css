@@ -1,0 +1,42 @@
+.company-top {
+    background-image: url('../figures/circuit.jpg');
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    color: #fff;
+    overflow: hidden;
+}
+
+.company-top .content {
+    flex: 1;
+    padding: 20px;
+}
+
+.company-top .description {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.company-top h1 {
+    margin: 0;
+    font-size: 2em;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    top: 40%;
+    position: relative;
+
+}
+
+.company-top h2 {
+    margin: 0;
+    font-size: 1.5em;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    top: 40%;
+    position: relative;
+}

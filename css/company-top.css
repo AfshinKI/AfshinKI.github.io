@@ -9,31 +9,38 @@
 
 .company-top .content {
     flex: 1;
-    padding: 20px;
 }
 
 .company-top .description {
     flex: 1;
-    padding: 20px;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 .company-top h1 {
     margin: 0;
-    font-size: 2em;
-    padding: 10px;
+    font-size: 3.5em;
     justify-content: center;
     display: flex;
     align-items: center;
     top: 40%;
     position: relative;
+}
 
+.description h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 5px;
+    background-color: white;
 }
 
 .company-top h2 {
     margin: 0;
-    font-size: 1.5em;
-    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 300;
     justify-content: center;
     display: flex;
     align-items: center;

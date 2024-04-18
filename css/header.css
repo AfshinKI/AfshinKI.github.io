@@ -1,16 +1,15 @@
 .header {
     background-color: black;
     color: #fff;
-    padding: 0px 0;
     text-align: center;
     position: fixed;
     top: 0;
-    width: 100%;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    padding: 10px;
 }
 
 .header .logo-container {

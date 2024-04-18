@@ -1,9 +1,9 @@
-function setBackgroundImage(imageUrl, id) {
+function setBackgroundImage(imageUrl, id, className) {
     var serviceElements;
     if (id) {
-        serviceElements = document.querySelectorAll('#' + id + ' .service-image');
+        serviceElements = document.querySelectorAll('#' + id + ' ' + className);
     } else {
-        serviceElements = document.querySelectorAll('.service-image');
+        serviceElements = document.querySelectorAll(className);
     }
     
     serviceElements.forEach(function(element) {

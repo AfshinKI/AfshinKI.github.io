@@ -8,53 +8,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/container.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/company-top.css">
+    <link rel="stylesheet" href="css/contents-top.css">
     <link rel="stylesheet" href="css/services.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/contact.css">
 
-    <style>
-        @import url('contact.css');
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        footer {
-            background-color: black;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-        }
-
-        body {
-            color: #283747;
-        }
-    </style>
 </head>
 
-<body>
+<body class="body">
     <div style="background-color: black;">
         <div id="container" class="container">
             <!-- Header -->
-            <section id="header" class="header">
-                <a href="index.html" class="logo-container">
-                    <img src="figures/Innovetron_Logo.png" alt="Logo" class="logo">
-                </a>
-                <nav class="nav">
-                    <a href="#services" class="nav-link">Services</a>
-                    <a href="#about" class="nav-link">About Us</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </nav>
-            </section>
+            <section id="header" class="header"></section>
 
             <!-- Company Top-->
-            <section id="company-top" class="company-top">
+            <section id="company-top" class="contents-top">
                 <div class="description">
                     <h1>INNOVETRON</h1>
                     <h2>Specifically tailored electronic and embedded solutions for your needs</h2>
@@ -63,27 +33,27 @@
 
             <!-- Services -->
             <section id="services" class="services">
-                <h2>Our Services</h2>
+                <h2>Services</h2>
                 <div class="services-container">
-                    <div class="service" id="service2">
+                    <div class="service" id="service-circuit">
                         <div class="service-image">
-                            <h3>Circuit design</h3>
+                            <h3>Circuit Design</h3>
                         </div>
                         <div class="service-description">
                             <p> System-level product design and requirements capture.</p>
                         </div>
                     </div>
-                    <div class="service" id="service1">
+                    <div class="service" id="service-pcb">
                         <div class="service-image">
-                            <h3>Advanced PCB design</h3>
+                            <h3>Advanced PCB Design</h3>
                         </div>
                         <div class="service-description">
                             <p>Complex, mixed-signal, multi-layer PCB design.</p>
                         </div>
                     </div>
-                    <div class="service" id="service3">
+                    <div class="service" id="service-software">
                         <div class="service-image">
-                            <h3>Software development</h3>
+                            <h3>Software Development</h3>
                         </div>
                         <div class="service-description">
                             <p>Embeded and software solution in C, C++, and Verilog.</p>
@@ -116,33 +86,47 @@
             </section>
 
             <!-- Footer -->
-            <footer>
-                <p>&copy; 2024 INNOVETRON. All rights reserved.</p>
-            </footer>
+            <section id="footer"></section>
         </div>
     </div>
-    <!-- End of components -->
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/scroll.js"></script>
+
     <script>
         $(document).ready(function () {
-            setBackgroundImage('figures/circuit_design.jpg', 'service1');
-            setBackgroundImage('figures/schematic_circuit.jpg', 'service2');
-            setBackgroundImage('figures/software.jpg', 'service3');
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            adjustWidth('header', 'container'); // Call the function when the document is ready
+            // Load header
+            $('#header').load('header.html', function (response, status, xhr) {
+                console.log('Header loaded:', status);
+            });
+            // Load footer
+            $('#footer').load('footer.html', function (response, status, xhr) {
+                console.log('Footer loaded:', status);
+            });
+            // Adjust the width of the header
+            adjustWidth('header', 'container');
+            // Set the background images for the services
+            setBackgroundImage('figures/circuit_design.jpg', 'service-pcb', '.service-image');
+            setBackgroundImage('figures/schematic_circuit.jpg', 'service-circuit', '.service-image');
+            setBackgroundImage('figures/software.jpg', 'service-software', '.service-image');
+
+            // Add event listeners
             window.addEventListener('resize', function () {
                 adjustWidth('header', 'container');
             });
+            document.getElementById('service-circuit').addEventListener('click', function () {
+                window.location.href = 'circuit_design.html';
+            });
+            document.getElementById('service-pcb').addEventListener('click', function () {
+                window.location.href = 'advanced_pcb_design.html';
+            });
+            document.getElementById('service-software').addEventListener('click', function () {
+                window.location.href = 'software_development.html';
+            });
         });
     </script>
-
-    <script src="js/scroll.js"></script>
 
 </body>
 

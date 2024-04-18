@@ -1,0 +1,40 @@
+name: Post Branch Preview URL to PR Page
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  post_preview_url:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get branch name
+        id: branch_name
+        run: echo "::set-output name=branch_name::${GITHUB_REF#refs/heads/}"
+
+      - name: Get PR number
+        id: pr_number
+        run: echo "::set-output name=pr_number::${{ github.event.pull_request.number }}"
+
+      - name: Generate preview URL
+        id: generate_url
+        run: echo "::set-output name=preview_url::https://raw.githack.com/AfshinKI/AfshinKI.github.io/${{ steps.branch_name.outputs.branch_name }}/index.html"
+
+      - name: Comment on PR with preview URL
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prNumber = process.env.PR_NUMBER;
+            const previewUrl = process.env.PREVIEW_URL;
+            const message = `Preview of the changes can be viewed [here](${previewUrl}).`;
+            github.issues.createComment({
+              issue_number: prNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: message
+            });

@@ -1,10 +1,41 @@
 <link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<a href="index.html" class="logo-container">
-    <img src="figures/Innovetron_Logo.png" alt="Logo" class="logo">
-</a>
-<nav class="nav">
-    <a href="index.html#services" class="nav-link">Services</a>
-    <a href="index.html#about" class="nav-link">About Us</a>
-    <a href="index.html#contact" class="nav-link">Contact</a>
-</nav>
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+    <a href="index.html" class="logo-container">
+        <img src="figures/Innovetron_Logo.png" alt="Logo" class="logo">
+    </a>
+
+    <!-- <a href="index.html" class="active">Logo</a> -->
+    <!-- Navigation links (hidden by default) -->
+    <div id="myLinks">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+    // document.getElementById('menu-toggle').addEventListener('click', function () {
+    //     this.classList.toggle('active');
+    //     const nav = document.querySelector('.nav');
+    //     if (this.classList.contains('active')) {
+    //         nav.style.display = 'flex';
+    //     } else {
+    //         nav.style.display = 'none';
+    //     }
+    // });
+</script>

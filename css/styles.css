@@ -226,12 +226,14 @@ a:hover {
 }
 
 /*----Nav ----*/
+.navbar-header {
+    margin: 10px 0;
+}
+
 .header .navbar-brand {
     float: left;
-    padding: 16px 15px;
-    line-height: 18px;
+    padding: 0;
     height: 50px;
-    /*color:#80B421;*/
 }
 
 .navbar-brand b {
@@ -246,6 +248,12 @@ a:hover {
 
 .logo:hover {
     color: #BEBEBE;
+}
+
+.navbar-brand img {
+    max-height: 100%;
+    width: auto;
+    padding: 0 10px;
 }
 
 .header .navbar {

@@ -9,6 +9,7 @@
 
 .arrow-box.previous {
     position: fixed;
+    left: 0;
     z-index: 1;
     width: 5%;
     height: 100%;

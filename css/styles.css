@@ -184,7 +184,7 @@ a:hover {
 
 .carousel-go-below {
     position: absolute;
-    bottom: 20px;
+    bottom: 15%;
     left: 0;
     right: 0;
     text-align: center;
@@ -206,12 +206,11 @@ a:hover {
     background-image: none;
     height: calc(100vh - 50px);
     background-image: url('');
-    background-repeat: no-repeat;
     background-position: right;
     background-attachment: fixed;
     background-size: cover;
+    object-fit: cover;
     width: 100%;
-    height: calc(100vh-50px);
 }
 
 .carousel-caption {
@@ -412,15 +411,15 @@ a:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.overlay-container p {
-    padding: 10px;
+.overlay-container h3 {
+    padding: 10px 0 20px;
 }
 
 .overlay-container img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
+    height: 200px;
+    width: 100%;
+    background-position: center;
+    object-fit: cover;
 }
 
 .overlay {

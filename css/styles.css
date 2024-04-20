@@ -574,6 +574,14 @@ footer ul li {
         padding: 25px 12px;
     }
 
+    .contents-top .description h1 {
+        font-size: 2.5em;
+    }
+
+    .contents-top .description h2 {
+        font-size: 1.0em;
+    }
+
 }
 
 @media (max-width:760px) {
@@ -594,6 +602,14 @@ footer ul li {
 
     .navbar-header {
         margin: 6px 0;
+    }
+
+    .contents-top .description h1 {
+        font-size: 2.5em;
+    }
+
+    .contents-top .description h2 {
+        font-size: 1.0em;
     }
 }
 
@@ -648,6 +664,14 @@ footer ul li {
     .heading {
         padding-bottom: 0px;
     }
+
+    .contents-top .description h1 {
+        font-size: 2.0em;
+    }
+
+    .contents-top .description h2 {
+        font-size: 0.8em;
+    }
 }
 
 @media (max-width: 320px) {
@@ -679,5 +703,13 @@ footer ul li {
     nav#filter li {
         display: inline-block;
         margin: 0 0 23px 5px;
+    }
+
+    .contents-top .description h1 {
+        font-size: 2.0em;
+    }
+
+    .contents-top .description h2 {
+        font-size: 0.8em;
     }
 }

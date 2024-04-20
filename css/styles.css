@@ -162,67 +162,58 @@ a:hover {
 
 .navbar-toggle {}
 
-/* Contents top */
-.contents-top {
-    position: relative;
+/*.carousel-inner*/
+#myCarousel {
+    margin-top: 50px;
+    border-bottom: 4px solid #80B421;
+}
+
+.carousel-inner>.item {
+    background-image: none;
     height: 450px;
-    color: #fff;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.contents-top img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-}
-
-.contents-top .description {
+.carousel-caption {
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.65);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.65);
-    padding: 0 10% 0 10%;
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    padding: 0;
 }
 
-.contents-top .description h1 {
-    position: relative;
-    top: 35%;
+.carousel-control.left,
+.carousel-control.right {
+    z-index: 10;
+}
+
+.carousel-caption h1 {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.20);
+    color: #FFFFFF;
+    font-weight: bold;
+    display: inline-block;
     display: flex;
     justify-content: center;
-    flex: 1;
-    margin: 0;
-    font-size: 3.5em;
     align-items: center;
 }
 
-.description .divider {
-    position: relative;
-    top: calc(35% + 1.7em);
-    display: flex;
-    flex: 1;
-    width: 100%;
-    height: 5px;
-    background-color: white;
-    border-radius: 2px;
+.carousel-caption .divider {
+    width: 70%;
+    height: 3px;
+    background: #80B421;
+    margin: 10px auto;
 }
 
-.contents-top .description h2 {
-    position: relative;
-    top: 30%;
-    display: flex;
-    flex: 1;
-    margin: 3.5em;
-    font-size: 1.2em;
-    justify-content: center;
-    align-items: center;
+.carousel-caption h3 {
     color: white;
-
+    flex: 1;
+    padding: 10px 15%;
 }
 
 /*----Nav ----*/
@@ -554,6 +545,14 @@ footer ul li {
     .navbar-nav {
         float: right;
     }
+
+    .carousel-caption h1 {
+        font-size: 3em;
+    }
+
+    .carousel-caption h3 {
+        font-size: 1.5em;
+    }
 }
 
 @media (max-width: 768px) {
@@ -574,12 +573,12 @@ footer ul li {
         padding: 25px 12px;
     }
 
-    .contents-top .description h1 {
+    .carousel-caption h1 {
         font-size: 2.5em;
     }
 
-    .contents-top .description h2 {
-        font-size: 1.0em;
+    .carousel-caption h3 {
+        font-size: 1.2em;
     }
 
 }
@@ -604,13 +603,6 @@ footer ul li {
         margin: 6px 0;
     }
 
-    .contents-top .description h1 {
-        font-size: 2.5em;
-    }
-
-    .contents-top .description h2 {
-        font-size: 1.0em;
-    }
 }
 
 @media (max-width: 480px) {
@@ -665,12 +657,12 @@ footer ul li {
         padding-bottom: 0px;
     }
 
-    .contents-top .description h1 {
-        font-size: 2.0em;
+    .carousel-caption h1 {
+        font-size: 24px;
     }
 
-    .contents-top .description h2 {
-        font-size: 0.8em;
+    .carousel-caption h3 {
+        font-size: 16px;
     }
 }
 
@@ -705,11 +697,11 @@ footer ul li {
         margin: 0 0 23px 5px;
     }
 
-    .contents-top .description h1 {
-        font-size: 2.0em;
+    .carousel-caption h3 {
+        display: none;
     }
 
-    .contents-top .description h2 {
-        font-size: 0.8em;
+    .carousel-caption h1 {
+        font-size: 18px;
     }
 }

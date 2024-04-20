@@ -63,16 +63,28 @@
     <div id="#top"></div>
 
     <!-- Home -->
-    <section id="home" class="page-section darkBg" style="padding: 0 0;">
-        <div class="container">
-            <div id="company-top" class="contents-top">
-                <img src="figures/circuit_sample.jpg" alt="INNOVETRON" />
-                <div class="description">
-                    <h1>INNOVETRON</h1>
-                    <div class="divider"></div>
-                    <h2>Specifically tailored electronic and embedded solutions for your needs</h2>
-                </div>
+    <section id="home">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-caption">
+                <h1>INNOVETRON</h1>
+                <div class="divider"></div>
+                <h3>Specifically tailored electronic and embedded solutions for your needs</h3>
             </div>
+            <div class="carousel-inner">
+                <div class="item" style="background-image: url('figures/circuit_sample.jpg');"></div>
+                <div class="item active" style="background-image: url('figures/circuit_sample.jpg');"></div>
+                <div class="item" style="background-image: url('figures/circuit_sample.jpg');"></div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span
+                    class="glyphicon glyphicon-chevron-left"></span></a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span
+                    class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
     </section>
 
@@ -372,6 +384,7 @@
     <script src="js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
     <script src="js/wow.min.js" type="text/javascript"></script>
     <script src="js/jquery.nav.js" type="text/javascript"></script>
+    <script src="js/jquery.cslider.js" type="text/javascript"></script>
     <script src="js/custom.js" type="text/javascript"></script>
     <script>
         new WOW().init();

@@ -33,12 +33,25 @@ p {
     color: #858585;
 }
 
+ul {
+    margin-left: 2em;
+}
+
+li {
+    color: #858585;
+    padding-bottom: 0.5em;
+}
+
 .pDark p {
     color: #BEBEBE;
 }
 
 .pDark h3 {
     color: #BEBEBE;
+}
+
+.text-justify {
+    text-align: justify;
 }
 
 .btn,
@@ -225,7 +238,7 @@ a:hover {
     background-image: none;
     height: calc(100vh - 50px);
     background-image: url('');
-    background-position: right;
+    background-position: center;
     background-attachment: fixed;
     background-size: cover;
     object-fit: cover;

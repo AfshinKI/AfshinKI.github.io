@@ -13,6 +13,8 @@ body {
     background: #fff;
 }
 
+
+
 ::selection {
     color: #fff;
     background: #80B421;
@@ -208,7 +210,6 @@ textarea.form-control {
 }
 
 .carousel-inner>.item {
-    background-image: none;
     height: calc(100vh - 50px);
     background-image: url('');
     background-position: center;
@@ -517,6 +518,28 @@ textarea.form-control {
     color: #fff;
 }
 
+/* Social */
+.member-item img {
+    max-width: 100%;
+}
+
+.member-item .socials {
+    margin: 0;
+    display: block;
+    text-align: center;
+    margin: 0 0 2em;
+}
+
+.member-item .socials i {
+    cursor: pointer;
+    font-size: 4em;
+    background: transparent;
+    margin: 0px 5px 0px 0px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
 /**/
 .page-section.intro {
     min-height: 600px;
@@ -638,11 +661,11 @@ footer ul li {
     }
 
     .carousel-caption h1 {
-        font-size: 4.5em;
+        font-size: 6em;
     }
 
     .carousel-caption h3 {
-        font-size: 1.5em;
+        font-size: 3em;
     }
 }
 
@@ -665,11 +688,11 @@ footer ul li {
     }
 
     .carousel-caption h1 {
-        font-size: 3em;
+        font-size: 4em;
     }
 
     .carousel-caption h3 {
-        font-size: 1.2em;
+        font-size: 2em;
     }
 }
 

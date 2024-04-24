@@ -534,11 +534,22 @@ textarea.form-control {
     cursor: pointer;
     font-size: 4em;
     background: transparent;
-    margin: 0px 5px 0px 0px;
+    margin: 5px 5px 5px 5px;
     position: relative;
     display: inline-block;
     text-align: center;
 }
+
+.member-item .socials .ai {
+    color: white;
+    background-color: #80B421;
+    border-radius: 10px;
+    height: 48px;
+    width: 48px;
+    font-size: 3.8em;
+    padding: 0 0 2px;
+}
+
 
 /**/
 .page-section.intro {

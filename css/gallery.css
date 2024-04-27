@@ -1,0 +1,125 @@
+/* Gallery */
+
+.gallery h1 {
+    text-align: center;
+}
+
+.gallery-grid {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-grid li {
+    list-style-type: none;
+    width: 20%;
+    min-width: 100px;
+    max-width: 150px;
+    cursor: pointer;
+    margin: 1em;
+}
+
+.gallery-grid li:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+}
+
+.gallery-item {
+    position: relative;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2%;
+}
+
+.gallery-item img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: auto;
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bright-green);
+    opacity: 0.8;
+    text-align: center;
+    color: var(--dark-grey);
+    font-size: 1.5em;
+    overflow-wrap: break-word;
+}
+
+/* Popup container */
+
+.gallery-popups {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.gallery-popups .cover-all {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.gallery-popups .popup {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    overflow: auto;
+}
+
+/* Popup content */
+.popup-content {
+    position: relative;
+    background-color: #fefefe;
+    padding: 1px 20px;
+    border: 1px solid #888;
+    border-radius: 1%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 600px;
+    height: 80%;
+    min-height: 200px;
+    max-height: 600px;
+    overflow: auto;
+    display: block;
+}
+
+.popup-content img {
+    width: 10%;
+    height: auto;
+}
+
+.popup-content figcaption {
+    text-align: center;
+    color: var(--light-grey);
+    font-size: 1.5em;
+}
+
+.popup-content h2 {
+    text-align: center;
+    color: var(--light-grey);
+}
+
+.popup-content p {
+    color: var(--light-grey);
+}

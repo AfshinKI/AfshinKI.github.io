@@ -3,99 +3,57 @@
 var galleryItems = [
   {
     id: 'cpp',
-    src: 'figures/circuit.jpg',
+    src: 'figures/Elcectronics.JPG',
     alt: 'Programming',
-    caption: 'C++',
-    heading: 'C++ Programming',
-    text: 'This is a popup window!'
+    caption: 'Analog and Digital Electronic',
+    heading: 'Analog and Digital Electronic',
+    text:
+        'Leverage my years of experience in electronics. I possess extensive experience in creating electronics for various fields including medical and industrial applications throughout my career. I excel in all phases of electrical design, from concept to implementation. I emphasize optimizing performance, integrating seamlessly, and delivering reliable solutions for your unique needs. Whether it\'s designing cutting-edge medical devices or pushing the boundaries of innovation, I can join your team and turn your ideas into reality with precision and excellence.',
+    bullets: [
+      'FPGA based board design', 'High-speed Signal design',
+      'Application specific PCIe cards', 'Analog / mixed signal design',
+      'Sensors and signal conditioning', 'Medical system electronics',
+      'Fail-safe safety electronics'
+    ],
   },
   {
     id: 'python',
-    src: 'figures/circuit.jpg',
+    src: 'figures/pcb.jpg',
     alt: 'Programming',
-    caption: 'Python',
-    heading: 'Python Programming',
-    text: 'This is a popup window!'
+    caption: 'Printed Circuit Board (PCB)',
+    heading: 'Printed Circuit Board (PCB)',
+    text:
+        'As a dedicated team member, I specialize in tailoring PCB design to meet the most demanding requirements of modern electronic systems. My skills ensure that your PCB designs are optimized for performance, reliability, and manufacturability. From schematic capture to production file generation, I provide comprehensive support at every stage of the design process.',
+    bullets: [
+      'Proficiency in ECAD tools: Altium Designer and KiCad',
+      'Seamless execution of schematic capture, library creation, and maintenance',
+      'Design and development of complex, mixed-signal, and multi-layer PCBs',
+      'Expertise in high-speed, sensitive, and high I/O-count designs',
+      'Robust design practices ensuring EMC (Electromagnetic Compatibility) and signal integrity',
+      'Precise stack-up and build-up design, incorporating controlled impedance',
+      'Efficient production file generation and streamlined ordering processes',
+      'Thorough component sourcing and coordination with fabrication and assembly houses'
+    ],
   },
   {
     id: 'javascript',
-    src: 'figures/circuit.jpg',
+    src: 'figures/software.jpg',
     alt: 'Programming',
-    caption: 'JavaScript',
-    heading: 'JavaScript Programming',
-    text: 'This is a popup window!'
-  },
-  {
-    id: 'typescript',
-    src: 'figures/circuit.jpg',
-    alt: 'Programming',
-    caption: 'TypeScript',
-    heading: 'TypeScript Programming',
-    text: 'This is a popup window!'
-  },
-  {
-    id: 'opencv',
-    src: 'figures/circuit.jpg',
-    alt: 'Framework',
-    caption: 'OpenCV',
-    heading: 'OpenCV Framework',
-    text: 'This is a popup window!'
-  },
-  {
-    id: 'cuda',
-    src: 'figures/circuit.jpg',
-    alt: 'Framework',
-    caption: 'CUDA SDK',
-    heading: 'CUDA SDK Framework',
-    text: 'This is a popup window!'
-  },
-  {
-    id: 'qt',
-    src: 'figures/circuit.jpg',
-    alt: 'Framework',
-    caption: 'Qt',
-    heading: 'Qt Framework',
-    text: 'This is a popup window!'
-  },
-  {
-    id: 'react',
-    src: 'figures/circuit.jpg',
-    alt: 'Framework',
-    caption: 'React',
-    heading: 'React Framework',
-    text: 'This is a popup window!'
-  },
-  {
-    id: 'cmake',
-    src: 'figures/circuit.jpg',
-    alt: 'Framework',
-    caption: 'CMake',
-    heading: 'CMake Framework',
-    text: 'This is a popup window!'
-  },
-  {
-    id: 'ros',
-    src: 'figures/circuit.jpg',
-    alt: 'Framework',
-    caption: 'ROS',
-    heading: 'ROS Framework',
-    text: 'This is a popup window!'
-  },
-  {
-    id: 'github',
-    src: 'figures/circuit.jpg',
-    alt: 'Framework',
-    caption: 'GitHub',
-    heading: 'GitHub Framework',
-    text: 'This is a popup window!'
-  },
-  {
-    id: 'grpc',
-    src: 'figures/circuit.jpg',
-    alt: 'Framework',
-    caption: 'gRPC',
-    heading: 'gRPC Framework',
-    text: 'This is a popup window!'
+    caption: 'Software & Firmware Skills',
+    heading: 'Software & Firmware Skills',
+    text:
+        'Utilize my expertise in software development. I offer a wide range of software development services tailored to meet your specific needs. I collaborate closely with you to define software specifications and requirements, develop efficient concepts, and produce prototype-level and production-ready code.',
+    bullets: [
+      'C / C++ coding for microcontrollers such as AVR, STM',
+      'C / C++ coding for software development for Windows and Linux',
+      'Verilog and HLS for AMD FPGAs',
+      'Embedded software development for IoT devices',
+      'Real-time embedded systems programming',
+      'Algorithm development and optimization',
+      'GUI (Graphical User Interface) design and development',
+      'Integration with hardware components', 'GPU and CUDA programming'
+    ],
+
   },
 ];
 
@@ -131,7 +89,7 @@ function createGallery(attachTo) {
 
 // Define gallery popups
 
-function createPopup(id, src, alt, heading, text) {
+function createPopup(id, src, alt, heading, text, bullets) {
   let popup = document.createElement('div');
   popup.className = 'popup';
   popup.id = id + '-popup';
@@ -141,17 +99,28 @@ function createPopup(id, src, alt, heading, text) {
   popupContent.className = 'popup-content';
 
   let h2 = document.createElement('h2');
+  h2.innerHTML = heading;
+
+  let line1 = document.createElement('hr');
 
   let image = document.createElement('img');
   image.src = src;
   image.alt = alt;
-  h2.appendChild(image);
 
-  let textNode = document.createTextNode(heading);
-  h2.appendChild(textNode);
+  let p1 = document.createElement('p');
+  p1.textContent = text;
 
-  let p = document.createElement('p');
-  p.textContent = text;
+  let p2 = document.createElement('p');
+  p2.textContent = 'Key skills include:';
+
+
+  for (let i = 0; i < bullets.length; i++) {
+    let bullet = document.createElement('li');
+    bullet.textContent = bullets[i];
+    p2.appendChild(bullet);
+  }
+
+  let line2 = document.createElement('hr');
 
   let button = document.createElement('button');
   button.className = 'btn btn-lg btn-primary pull-right';
@@ -159,7 +128,11 @@ function createPopup(id, src, alt, heading, text) {
   button.textContent = 'Close';
 
   popupContent.appendChild(h2);
-  popupContent.appendChild(p);
+  popupContent.appendChild(line1);
+  popupContent.appendChild(image);
+  popupContent.appendChild(p1);
+  popupContent.appendChild(p2);
+  popupContent.appendChild(line2);
   popupContent.appendChild(button);
 
   popup.appendChild(popupContent);
@@ -190,8 +163,8 @@ function createGalleryPopups(attachTo) {
       carouselItem.className += ' active';  // Set first item as active
     }
     carouselItem.id = item.id + '-popup';
-    let popup =
-        createPopup(item.id, item.src, item.alt, item.heading, item.text);
+    let popup = createPopup(
+        item.id, item.src, item.alt, item.heading, item.text, item.bullets);
     carouselItem.appendChild(popup);
     carouselInner.appendChild(carouselItem);
   }

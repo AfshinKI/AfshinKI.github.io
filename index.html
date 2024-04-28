@@ -19,49 +19,58 @@
     <!--[if lte IE 8]>
 		<script type="text/javascript" src="http://explorercanvas.googlecode.com/svn/trunk/excanvas.js"></script>
 	<![endif]-->
-
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox.css" media="screen" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- <link href="font/css/font-awesome.min.css" rel="stylesheet"> -->
     <link href="assets/fontawesome-free-6.5.2-web/css/fontawesome.min.css" rel="stylesheet">
     <link href="assets/fontawesome-free-6.5.2-web/css/brands.min.css" rel="stylesheet">
     <link href="assets/fontawesome-free-6.5.2-web/css/solid.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gallery.css">
 
 </head>
 
 <body>
     <!-- Header -->
-    <header class="header" id="header">
+    <section id="header" class="header bg-black">
         <div class="container">
-            <nav class="navbar navbar-inverse blackBg" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse"
-                        data-target="#main-nav">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar bar1"></span>
-                        <span class="icon-bar bar2"></span>
-                        <span class="icon-bar bar3"></span>
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <div class="container-fluid">
+                    <h1><a href="#" class="navbar-brand">
+                            <img src="figures/Innovetron_Logo.png" alt="INNOVETRON">
+                        </a></h1>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="nav-toggle"
+                        data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <div class="hamburger-icon">
+                            <div class="icon-bar bar1"></div>
+                            <div class="icon-bar bar2"></div>
+                            <div class="icon-bar bar3"></div>
+                        </div>
                     </button>
-                    <a href="#" class="navbar-brand">
-                        <img src="figures/Innovetron_Logo.png" alt="INNOVETRON">
-                    </a>
-                </div>
-                <div id="main-nav" class="collapse navbar-collapse blackBg">
-                    <ul class="nav navbar-nav pull-right" id="mainNav">
-                        <li class="active"><a href="#home" class="scroll-link">Home</a></li>
-                        <li><a href="#services" class="scroll-link ">Skills</a></li>
-                        <li><a href="#aboutUs" class="scroll-link ">About</a></li>
-                        <li><a href="#founder" class="scroll-link ">Background</a></li>
-                        <li><a href="#contact" class="scroll-link ">Contact</a></li>
-                    </ul>
+                    <div class="collapse navbar-collapse flex-end" id="main-nav">
+                        <div class="navbar-nav">
+                            <li class="active">
+                                <a href="#home" class="active scroll-link">Home</a>
+                            </li>
+                            <li>
+                                <a href="#services" class="scroll-link ">Skills</a>
+                            </li>
+                            <li>
+                                <a href="#aboutUs" class="scroll-link ">About</a>
+                            </li>
+                            <li>
+                                <a href="#founder" class="scroll-link ">Background</a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="scroll-link ">Contact</a>
+                            </li>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>
-    </header>
+    </section>
 
     <!-- Top (Link) -->
     <div id="#top"></div>
@@ -73,7 +82,8 @@
                 <h1 class="row">INNOVETRON</h1>
                 <div class="row divider"></div>
                 <h3 class="row lh-base">Transforming Concepts into Cutting-Edge Reality.</h3>
-                <button class="row btn btn-lg btn-primary" id="jump-to-quote">Contact me for job opportunities</button>
+                <a href="#contact" class="row btn btn-lg btn-primary" id="jump-to-quote">Contact me for job
+                    opportunities</a>
                 <a href="#services" class="carousel-go-below" id="go-to-service">
                     <i class="fa fa-chevron-down fa-3x"></i>
                 </a>
@@ -81,6 +91,18 @@
             <div class="carousel-inner">
                 <div class="item active" id="top-image" style="background-image: url('figures/circuit_sample.jpg');">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="page-section">
+        <div class="container">
+            <div class="heading text-center">
+                <h2>Skills</h2>
+            </div>
+            <div class="gallery">
+                <ul class="gallery-grid wow fadeInUp" id="project-gallery"></ul>
+                <div id="project-gallery-popup"></div>
             </div>
         </div>
     </section>
@@ -416,6 +438,7 @@
         </div>
     </section>
 
+
     <!-- Contact -->
     <section id="contact" class="page-section darkBg pDark">
         <div class="container">
@@ -430,23 +453,23 @@
                 <form method="post" action="https://formspree.io/f/moqgyplv" id="contactfrm" role="form">
                     <div class="form-group">
                         <p>Name *</p>
-                        <input type="text" class="form-control" name="name" id="message-name" placeholder="Enter name"
-                            title="Please enter your name" required>
+                        <input type="text" class="form-control" name="name" id="message-name"
+                            placeholder="Please enter name" title="Eenter your name" required>
                     </div>
                     <div class="form-group">
                         <p>Email *</p>
                         <input type="email" class="form-control" name="email" id="message-email"
-                            placeholder="Enter email" title="Please enter a valid email address" required>
+                            placeholder="Please enter email" title="Enter a valid email address" required>
                     </div>
                     <div class="form-group">
                         <p>Title *</p>
                         <input name="title" class="form-control" type="tel" id="message-title" size="128" value=""
-                            placeholder="Enter title" title="Please enter a title" required>
+                            placeholder="Please enter title" title="Enter a title" required>
                     </div>
                     <div class="form-group">
                         <p>Message *</p>
-                        <textarea name="comment" class="form-control" id="message" placeholder="Enter your message…"
-                            title="Please enter your message" required></textarea>
+                        <textarea name="comment" class="form-control" id="message"
+                            placeholder="Please enter your message…" title="Enter your message" required></textarea>
                     </div>
                     <button name="submit" type="submit" class="btn btn-lg btn-primary pull-right"
                         id="submit">Submit</button>
@@ -469,14 +492,11 @@
     <a href="#top" class="topHome" id="topHome"><i class="fa-solid fa-chevron-up fa-2x"></i></a>
 
     <!--[if lte IE 8]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><![endif]-->
-    <script src="js/modernizr-latest.js"></script>
-    <script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="js/jquery-3.7.1.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/jquery.isotope.min.js" type="text/javascript"></script>
-    <script src="js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
     <script src="js/wow.min.js" type="text/javascript"></script>
-    <script src="js/jquery.nav.js" type="text/javascript"></script>
-    <script src="js/custom.js" type="text/javascript"></script>
+    <script src="js/gallery.js" type="text/javascript"></script>
+    <!-- <script src="js/observer.js" type="text/javascript"></script> -->
     <script>
         new WOW().init();
         if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
@@ -485,30 +505,8 @@
         window.addEventListener('scroll', function () {
             $('#topHome').css('display', window.scrollY > 100 ? 'block' : 'none');
         });
-        $('#main-nav a').on('click', function () {
-            $('#main-nav').collapse('hide'); // Close the menu when clicked
-            $('#nav-toggle').toggleClass('open'); // Change the hamburger icon
-        });
-        $('#nav-toggle').click(function () {
+        $('.navbar-toggler').click(function () {
             $(this).toggleClass('open');
-        });
-        $('#topHome').click(function () {
-            $('html, body').animate({
-                scrollTop: 0
-            }, 800);
-            return false;
-        });
-        $('#go-to-service').click(function () {
-            $('html, body').animate({
-                scrollTop: $('#services').offset().top - $('#header').height()
-            }, 800);
-            return false;
-        });
-        $('#jump-to-quote').click(function () {
-            $('html, body').animate({
-                scrollTop: $('#contact').offset().top - $('#header').height()
-            }, 800);
-            return false;
         });
     </script>
 </body>

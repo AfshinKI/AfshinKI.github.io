@@ -18,7 +18,7 @@ var aboutItems = [
     icon: 'fa fa-map-marker',
     caption: 'Where am I?',
     text:
-        'I am proud to call Edmonton, Alberta, our home base. From here, I am equipped to collaborate with your team both locally and globally. By hiring me, you\'ll experience our creativity, expertise, and dedication at its finest.'
+        'I am proud to call Edmonton, Alberta, our home base. From here, I am equipped to collaborate with your team both locally and globally. By hiring me, you\'ll experience my creativity, expertise, and dedication at its finest.'
   }
 ];
 

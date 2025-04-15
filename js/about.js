@@ -1,4 +1,4 @@
-var aboutItems = [
+const aboutItems = [
   {
     id: 'excel',
     icon: 'fa fa-desktop',
@@ -23,24 +23,31 @@ var aboutItems = [
 ];
 
 function createAboutItem(id, icon, caption, text) {
-  let div = document.createElement('div');
-  div.className = 'col-md-4 col-sm-4 wow fadeInUp';
-  let h3 = document.createElement('h3');
-  let i = document.createElement('i');
-  i.className = icon;
-  h3.appendChild(i);
-  h3.innerHTML += '&nbsp ' + caption;
-  let p = document.createElement('p');
-  p.innerHTML = text;
-  div.appendChild(h3);
-  div.appendChild(p);
+  const div = document.createElement('div');
+  div.classList.add('col-md-3', 'col-sm-6', 'card', 'border-0', 'm-2');
+  div.innerHTML = `
+    <div class="card-body">
+    <h3>
+      <i class="${icon}"></i>
+      &nbsp ${caption}
+    </h3>
+    <p>${text}</p>
+    </div>
+  `;
   return div;
 }
 
 function createAboutItems(attachTo) {
-  let about = document.getElementById(attachTo);
-  aboutItems.forEach(function(item) {
-    about.appendChild(
+  const container = document.getElementById(attachTo);
+  if (!container) {
+    console.error(`Element with id ${attachTo} not found.`);
+    return;
+  }
+  container.innerHTML = ''; // Clear existing content
+  container.classList.add('d-flex', 'flex-wrap', 'justify-content-center');
+  
+  aboutItems.forEach(item => {
+    container.appendChild(
         createAboutItem(item.id, item.icon, item.caption, item.text));
   });
 }

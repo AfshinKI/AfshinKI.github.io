@@ -42,3 +42,7 @@
     height: 100%;
     z-index: 1;
 }
+
+section {
+    padding: 56px 0;
+}

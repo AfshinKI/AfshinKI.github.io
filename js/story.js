@@ -19,12 +19,12 @@ function createStory(attachTo) {
     return;
   }
   container.innerHTML = ''; // Clear existing content
-  container.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'gap-3');
+  container.className = 'd-flex flex-wrap justify-content-center align-items-center gap-3';
   
   const picture = document.createElement('img');
   picture.src = 'figures/founder.jpg';
   picture.alt = 'Afshin';
-  picture.classList.add('img-fluid', 'rounded-circle', 'mb-3', 'col-lg-4', 'col-md-6', 'col-sm-8');
+  picture.className = 'img-fluid rounded-circle mb-3 col-lg-4 col-md-6 col-sm-8';
   container.appendChild(picture);
 
   const textContainer = document.createElement('div');

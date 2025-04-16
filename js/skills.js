@@ -67,10 +67,10 @@ const modalPostFix = '-modal';
 
 function createGalleryItem(id, src, alt, caption) {
   const div = document.createElement('div');
-  div.classList.add('col-md-3', 'col-sm-6', 'card', 'm-2');
+  div.className = 'card col-lg-3 col-md-5 col-sm-10 text-secondary';
   div.innerHTML = `
       <div class="card-body h-100" role="button" data-bs-toggle="modal" data-bs-target="#${id}${modalPostFix}">
-        <img src="${src}" alt="${alt}" class="card-img-top">
+        <img src="${src}" alt="${alt}" class="card-img-top" style="height: 200px; object-fit: cover;">
         <div class="card-body">
           <h5 class="card-title text-center">${caption}</h5>
         </div>
@@ -82,29 +82,29 @@ function createGalleryItem(id, src, alt, caption) {
 
 function createModal(id, src, heading, text, skillCaption, bullets) {
   const div = document.createElement('div');
-  div.classList.add('modal', 'fade');
+  div.className = 'modal fade';
   div.id = `${id}${modalPostFix}`;
   div.setAttribute('tabindex', '-1');
   div.setAttribute('aria-labelledby', `${id}-label`);
   div.setAttribute('aria-hidden', 'true');
   div.innerHTML = `
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable ">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title" id="${id}-label">${heading}</h2>
+          <h2 class="modal-title text-innovetron" id="${id}-label">${heading}</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body text-secondary">
           <img src="${src}" alt="${heading}" class="img-fluid mb-3">
           <h3>${heading}</h3>
-          <p>${text}</p>
+          <p class="text-justify">${text}</p>
           <p>${skillCaption}</p>
           <ul>
             ${bullets.map(bullet => `<li>${bullet}</li>`).join('')}
           </ul>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
         </div>
 
       </div>
@@ -120,8 +120,7 @@ function createGallery(attachTo) {
     return;
   }
   container.innerHTML = ''; // Clear existing content
-  container.classList.add('d-flex', 'flex-wrap', 'justify-content-center');
-
+  container.className = 'd-flex flex-wrap justify-content-center align-items-center gap-5';
   galleryItems.forEach(item => {
     container.appendChild(createGalleryItem(item.id, item.src, item.alt, item.caption));
     container.appendChild(createModal(item.id, item.src, item.heading, item.text,

@@ -24,15 +24,13 @@ const aboutItems = [
 
 function createAboutItem(id, icon, caption, text) {
   const div = document.createElement('div');
-  div.classList.add('col-md-3', 'col-sm-6', 'card', 'border-0', 'm-2');
+  div.className = 'col-lg-3 col-md-5 col-sm-10';
   div.innerHTML = `
-    <div class="card-body">
     <h3>
-      <i class="${icon}"></i>
+      <i class="${icon} text-innovetron"></i>
       &nbsp ${caption}
     </h3>
     <p>${text}</p>
-    </div>
   `;
   return div;
 }
@@ -44,7 +42,7 @@ function createAboutItems(attachTo) {
     return;
   }
   container.innerHTML = ''; // Clear existing content
-  container.classList.add('d-flex', 'flex-wrap', 'justify-content-center');
+  container.className = 'd-flex flex-wrap justify-content-center gap-5';
   
   aboutItems.forEach(item => {
     container.appendChild(

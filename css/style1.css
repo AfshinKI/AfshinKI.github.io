@@ -107,6 +107,7 @@ section {
   align-items: center;
   opacity: 0;
   transition: all linear 0.2s ease-in-out;
+  border-radius: 0.375rem; /* Bootstrap default card border-radius (rounded) */
 }
 
 #services .card:hover .overlay {

@@ -67,12 +67,15 @@ const modalPostFix = '-modal';
 
 function createGalleryItem(id, src, alt, caption) {
   const div = document.createElement('div');
-  div.className = 'card col-lg-3 col-md-5 col-sm-10 text-secondary';
+  div.className = 'card text-secondary col-lg-3 col-md-4 col-sm-6 p-0 border-0 shadow-sm position-relative';
   div.innerHTML = `
-      <div class="card-body h-100" role="button" data-bs-toggle="modal" data-bs-target="#${id}${modalPostFix}">
+      <div role="button" data-bs-toggle="modal" data-bs-target="#${id}${modalPostFix}">
         <img src="${src}" alt="${alt}" class="card-img-top" style="height: 200px; object-fit: cover;">
         <div class="card-body">
           <h5 class="card-title text-center">${caption}</h5>
+        </div>
+        <div class="overlay">
+          <i class="fa fa-search-plus"></i>
         </div>
       </div>
   `;
@@ -95,7 +98,7 @@ function createModal(id, src, heading, text, skillCaption, bullets) {
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-secondary">
-          <img src="${src}" alt="${heading}" class="img-fluid mb-3">
+          <img src="${src}" alt="${heading}" class="img-fluid mb-3" style="height: 200px; width: 100%; object-fit: cover;">
           <h3>${heading}</h3>
           <p class="text-justify">${text}</p>
           <p>${skillCaption}</p>
@@ -119,15 +122,30 @@ function createGallery(attachTo) {
     console.error(`Element with id ${attachTo} not found.`);
     return;
   }
+
   container.innerHTML = ''; // Clear existing content
-  container.className = 'd-flex flex-wrap justify-content-center align-items-center gap-5';
+
+  const row = document.createElement('div');
+  row.className = 'row justify-content-center gap-4';
+
   galleryItems.forEach(item => {
-    container.appendChild(createGalleryItem(item.id, item.src, item.alt, item.caption));
-    container.appendChild(createModal(item.id, item.src, item.heading, item.text,
-      item.skillCaption, item.bullets));
+    row.appendChild(createGalleryItem(item.id, item.src, item.alt, item.caption));
+
+    container.appendChild(
+      createModal(
+        item.id,
+        item.src,
+        item.heading,
+        item.text,
+        item.skillCaption,
+        item.bullets
+      )
+    );
   });
-  
+
+  container.appendChild(row);
 }
+
 
 
 createGallery('skills');

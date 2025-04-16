@@ -18,24 +18,42 @@ function createStory(attachTo) {
     console.error(`Element with id ${attachTo} not found.`);
     return;
   }
-  container.innerHTML = ''; // Clear existing content
-  container.className = 'd-flex flex-wrap justify-content-center align-items-center gap-3';
-  
-  const picture = document.createElement('img');
-  picture.src = 'figures/founder.jpg';
-  picture.alt = 'Afshin';
-  picture.className = 'img-fluid rounded-circle mb-3 col-lg-4 col-md-6 col-sm-8';
-  container.appendChild(picture);
 
-  const textContainer = document.createElement('div');
-  textContainer.innerHTML = ''; // Clear existing content
-  
+  container.innerHTML = ''; // Clear existing content
+
+  // Create a Bootstrap row
+  const row = document.createElement('div');
+  row.className = 'row align-items-center';
+
+  // Create image column
+  const imgCol = document.createElement('div');
+  imgCol.className = 'col-lg-4 col-md-6 text-center px-4 my-2';
+  imgCol.innerHTML = `
+    <img src="figures/founder.jpg" alt="Afshin" class="img-fluid rounded-circle">
+    <div class="d-flex justify-content-center gap-2 mt-2">
+        <a href="https://www.linkedin.com/in/afshinkashani/" class="text-innovetron h2">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=o8TAswwAAAAJ&hl=en" class="text-innovetron h2">
+            <i class="fa-brands fa-google-scholar"></i>
+        </a>
+    </div>
+  `;
+
+  // Create text column
+  const textCol = document.createElement('div');
+  textCol.className = 'col-lg-8 col-md-6 px-4 my-2';
+
   stories.forEach(item => {
     const p = document.createElement('p');
     p.textContent = item;
-    textContainer.appendChild(p);
+    textCol.appendChild(p);
   });
-  container.appendChild(textContainer);
+
+  // Append columns to row, then to container
+  row.appendChild(imgCol);
+  row.appendChild(textCol);
+  container.appendChild(row);
 }
 
 createStory('story');

@@ -36,12 +36,14 @@
             <a href="#">
                 <img src="figures/Innovetron_Logo.png" alt="INNOVETRON" height="40">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="custom-toggler" id="menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                 <span></span>
+                 <span></span>
+                 <span></span>
             </button>
             
             <div class="collapse navbar-collapse" id="main-nav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto text-end">
                 <li class="nav-item active"><a href="#home" class="nav-link scroll-link">Home</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link scroll-link">Skills</a></li>
                 <li class="nav-item"><a href="#aboutUs" class="nav-link scroll-link">About</a></li>
@@ -176,7 +178,9 @@
         $('.navbar-collapse .nav-link').on('click', function(){
             $('.navbar-collapse').collapse('hide');
         });
-
+        $('#menu-toggle').on('click', function(){
+            $(this).toggleClass('open');
+        });
     </script>
 </body>
 

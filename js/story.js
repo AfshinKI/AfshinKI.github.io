@@ -42,7 +42,7 @@ function createStory(attachTo) {
 
   // Create text column
   const textCol = document.createElement('div');
-  textCol.className = 'col-lg-8 col-md-6 px-4 my-2';
+  textCol.className = 'col-lg-8 col-md-6 px-4 my-2 text-justify';
 
   stories.forEach(item => {
     const p = document.createElement('p');

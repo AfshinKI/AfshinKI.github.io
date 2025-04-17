@@ -30,7 +30,7 @@ function createAboutItem(id, icon, caption, text) {
       <i class="${icon} text-innovetron"></i>
       &nbsp ${caption}
     </h3>
-    <p>${text}</p>
+    <p class="text-justify">${text}</p>
   `;
   return div;
 }

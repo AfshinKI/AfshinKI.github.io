@@ -97,7 +97,7 @@ function createModal(id, src, heading, text, skillCaption, bullets) {
           <h2 class="modal-title text-innovetron" id="${id}-label">${heading}</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body text-secondary">
+        <div class="modal-body text-secondary text-justify">
           <img src="${src}" alt="${heading}" class="img-fluid mb-3" style="height: 200px; width: 100%; object-fit: cover;">
           <h3>${heading}</h3>
           <p class="text-justify">${text}</p>

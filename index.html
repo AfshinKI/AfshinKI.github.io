@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/style1.css">
 </head>
 
+<!-- Body Start -->
 <body>
     <!-- Top (Link) -->
     <div id="#top"></div>
@@ -153,6 +154,25 @@
     <script src="js/story.js" type="text/javascript"></script>
     <script>
         new WOW().init();
+        $(document).ready(function () {
+            const sections = $('section'); // All the <section> tags
+            const navLinks = $('.nav-link');
+
+            $(window).on('scroll', function () {
+            const scrollPos = $(document).scrollTop();
+
+            sections.each(function () {
+                const top = $(this).offset().top - 56;
+                const bottom = top + $(this).outerHeight();
+                const id = $(this).attr('id');
+
+                if (scrollPos >= top && scrollPos < bottom) {
+                navLinks.removeClass('active');
+                $(`.nav-link[href="#${id}"]`).addClass('active');
+                }
+            });
+            });
+        });
         document.addEventListener("DOMContentLoaded", function () {
             const backToTop = document.getElementById("backToTop");
 

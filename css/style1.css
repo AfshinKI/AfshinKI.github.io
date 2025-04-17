@@ -95,6 +95,11 @@ section {
     transition: color 0.3s ease;
   }
 
+  .nav-link.active {
+    color: #80B421 !important;
+    font-weight: bold;
+  }
+
 /* Home section */
 #home img {
     width: 100%;
@@ -151,8 +156,3 @@ section {
   opacity: 1;
   filter: alpha(opacity=100);
 }
-
-/* #services .row::after {
-  content: "";
-  margin:auto;
-} */

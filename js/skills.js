@@ -67,7 +67,7 @@ const modalPostFix = '-modal';
 
 function createGalleryItem(id, src, alt, caption) {
   const div = document.createElement('div');
-  div.className = 'card text-secondary col-lg-3 col-md-4 col-sm-6 p-0 border-0 shadow-sm position-relative';
+  div.className = 'card text-secondary col-lg-3 col-md-6 col-sm-10 p-0 border-0 shadow-sm position-relative';
   div.innerHTML = `
       <div role="button" data-bs-toggle="modal" data-bs-target="#${id}${modalPostFix}">
         <img src="${src}" alt="${alt}" class="card-img-top" style="height: 200px; object-fit: cover;">
@@ -99,7 +99,6 @@ function createModal(id, src, heading, text, skillCaption, bullets) {
         </div>
         <div class="modal-body text-secondary text-justify">
           <img src="${src}" alt="${heading}" class="img-fluid mb-3" style="height: 200px; width: 100%; object-fit: cover;">
-          <h3>${heading}</h3>
           <p class="text-justify">${text}</p>
           <p>${skillCaption}</p>
           <ul>
@@ -126,7 +125,7 @@ function createGallery(attachTo) {
   container.innerHTML = ''; // Clear existing content
 
   const row = document.createElement('div');
-  row.className = 'row justify-content-center gap-4';
+  row.className = 'row justify-content-center gap-4 px-4';
 
   galleryItems.forEach(item => {
     row.appendChild(createGalleryItem(item.id, item.src, item.alt, item.caption));

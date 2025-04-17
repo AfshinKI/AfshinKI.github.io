@@ -24,7 +24,7 @@ const aboutItems = [
 
 function createAboutItem(id, icon, caption, text) {
   const div = document.createElement('div');
-  div.className = 'col-lg-3 col-md-5 col-sm-10';
+  div.className = 'col-lg-3 col-md-6 col-sm-10';
   div.innerHTML = `
     <h3>
       <i class="${icon} text-innovetron"></i>
@@ -42,7 +42,7 @@ function createAboutItems(attachTo) {
     return;
   }
   container.innerHTML = ''; // Clear existing content
-  container.className = 'd-flex flex-wrap justify-content-center gap-5';
+  container.className = 'd-flex flex-wrap justify-content-center gap-4 px-4';
   
   aboutItems.forEach(item => {
     container.appendChild(

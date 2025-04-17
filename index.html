@@ -25,7 +25,7 @@
             <a href="#">
                 <img src="figures/Innovetron_Logo.png" alt="INNOVETRON" height="40">
             </a>
-            <button class="custom-toggler" id="menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler custom-toggler" id="menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                  <span></span>
                  <span></span>
                  <span></span>
@@ -89,7 +89,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="bg-dark text-light-gray text-justify">
+    <section id="contact" class="bg-dark text-light-gray text-justify px-4">
         <div class="container">
             <div class="heading text-center">
                 <!-- Heading -->
@@ -166,6 +166,7 @@
         });
         $('.navbar-collapse .nav-link').on('click', function(){
             $('.navbar-collapse').collapse('hide');
+            $('#menu-toggle').removeClass('open');
         });
         $('#menu-toggle').on('click', function(){
             $(this).toggleClass('open');

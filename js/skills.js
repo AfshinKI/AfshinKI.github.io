@@ -1,6 +1,5 @@
 
-
-var galleryItems = [
+const galleryItems = [
   {
     id: 'electronics',
     src: 'figures/Elcectronics.JPG',
@@ -67,146 +66,85 @@ var galleryItems = [
 const modalPostFix = '-modal';
 
 function createGalleryItem(id, src, alt, caption) {
-  let imageBox = document.createElement('div');
-  imageBox.className = 'image-box wow fadeInUp';
-
-  let overlayContainer = document.createElement('div');
-  overlayContainer.className = 'overlay-container text-center';
-
-
-  let image = document.createElement('img');
-  image.src = src;
-  image.alt = alt;
-
-  let overlay = document.createElement('a');
-  overlay.className = 'overlay';
-  overlay.setAttribute('data-toggle', 'modal');
-  overlay.setAttribute('data-target', `#${id}${modalPostFix}`);
-  overlay.innerHTML = '<i class="fa fa-search-plus"></i>';
-
-  let h3 = document.createElement('h3');
-  h3.textContent = caption;
-
-  overlayContainer.appendChild(image);
-  overlayContainer.appendChild(overlay);
-  overlayContainer.appendChild(h3);
-
-  imageBox.appendChild(overlayContainer);
-
-  return imageBox;
+  const div = document.createElement('div');
+  div.className = 'card text-secondary col-lg-3 col-md-6 col-sm-10 p-0 border-0 shadow-sm position-relative';
+  div.innerHTML = `
+      <div role="button" data-bs-toggle="modal" data-bs-target="#${id}${modalPostFix}">
+        <img src="${src}" alt="${alt}" class="card-img-top" style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title text-center">${caption}</h5>
+        </div>
+        <div class="overlay">
+          <i class="fa fa-search-plus"></i>
+        </div>
+      </div>
+  `;
+  return div;
 }
+
 
 function createModal(id, src, heading, text, skillCaption, bullets) {
-  let modal = document.createElement('div');
-  modal.className = 'modal fade';
-  modal.id = id + modalPostFix;
-  modal.tabIndex = -1;
-  modal.role = 'dialog';
-  modal.setAttribute('aria-labelledby', id);
-  modal.setAttribute('aria-hidden', 'true');
+  const div = document.createElement('div');
+  div.className = 'modal fade';
+  div.id = `${id}${modalPostFix}`;
+  div.setAttribute('tabindex', '-1');
+  div.setAttribute('aria-labelledby', `${id}-label`);
+  div.setAttribute('aria-hidden', 'true');
+  div.innerHTML = `
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title text-innovetron" id="${id}-label">${heading}</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-secondary text-justify">
+          <img src="${src}" alt="${heading}" class="img-fluid mb-3" style="height: 200px; width: 100%; object-fit: cover;">
+          <p class="text-justify">${text}</p>
+          <p>${skillCaption}</p>
+          <ul>
+            ${bullets.map(bullet => `<li>${bullet}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
 
-  let modalDialog = document.createElement('div');
-  modalDialog.className = 'modal-dialog modal-lg';
-
-  let modalContent = document.createElement('div');
-  modalContent.className = 'modal-content';
-
-  let modalHeader = document.createElement('div');
-  modalHeader.className = 'modal-header';
-
-  let closeButton = document.createElement('button');
-  closeButton.type = 'button';
-  closeButton.className = 'close';
-  closeButton.setAttribute('data-dismiss', 'modal');
-
-  let span = document.createElement('span');
-  span.setAttribute('aria-hidden', 'true');
-  span.innerHTML = '&times;';
-  closeButton.appendChild(span);
-
-  let span2 = document.createElement('span');
-  span2.className = 'sr-only';
-  span2.textContent = 'Close';
-  closeButton.appendChild(span2);
-
-  let h2 = document.createElement('h2');
-  h2.className = 'modal-title';
-  h2.innerHTML = heading;
-
-  modalHeader.appendChild(closeButton);
-  modalHeader.appendChild(h2);
-
-  let modalBody = document.createElement('div');
-  modalBody.className = 'modal-body';
-
-  let row = document.createElement('div');
-  row.className = 'row';
-
-  let col = document.createElement('div');
-  col.className = 'col-md-12';
-
-  let image = document.createElement('img');
-  image.src = src;
-
-  let h3 = document.createElement('h3');
-
-  let p = document.createElement('p');
-  p.textContent = text;
-
-  let p2 = document.createElement('p');
-  p2.textContent = skillCaption;
-  let ul = document.createElement('ul');
-  bullets.forEach(bullet => {
-    let li = document.createElement('li');
-    li.textContent = bullet;
-    ul.appendChild(li);
-  });
-
-  let modalFooter = document.createElement('div');
-  modalFooter.className = 'modal-footer';
-
-  let modalFooterButton = document.createElement('button');
-  modalFooterButton.type = 'button';
-  modalFooterButton.className = 'btn btn-sm btn-default';
-  modalFooterButton.setAttribute('data-dismiss', 'modal');
-  modalFooterButton.textContent = 'Close';
-  modalFooter.appendChild(modalFooterButton);
-
-  col.appendChild(image);
-  col.appendChild(h3);
-  col.appendChild(p);
-  col.appendChild(p2);
-  col.appendChild(ul);
-  row.appendChild(col);
-  modalBody.appendChild(row);
-  modalContent.appendChild(modalHeader);
-  modalContent.appendChild(modalBody);
-  modalContent.appendChild(modalFooter);
-  modalDialog.appendChild(modalContent);
-  modal.appendChild(modalDialog);
-
-  return modal;
+      </div>
+    </div>
+  `;
+  return div;
 }
-
 
 function createGallery(attachTo) {
-  let gallery = document.getElementById(attachTo);
+  const container = document.getElementById(attachTo);
+  if (!container) {
+    console.error(`Element with id ${attachTo} not found.`);
+    return;
+  }
+
+  container.innerHTML = ''; // Clear existing content
+
+  const row = document.createElement('div');
+  row.className = 'row justify-content-center gap-4 px-4';
 
   galleryItems.forEach(item => {
-    let card = document.createElement('div');
-    card.className = 'col-sm-6 col-md-4 isotopeItem web-design pdingBtm30';
+    row.appendChild(createGalleryItem(item.id, item.src, item.alt, item.caption));
 
-    let galleryItem =
-        createGalleryItem(item.id, item.src, item.alt, item.caption);
-    card.appendChild(galleryItem);
-
-    let modal = createModal(
-        item.id, item.src, item.heading, item.text, item.skillCaption,
-        item.bullets);
-    card.appendChild(modal);
-    gallery.appendChild(card);
+    container.appendChild(
+      createModal(
+        item.id,
+        item.src,
+        item.heading,
+        item.text,
+        item.skillCaption,
+        item.bullets
+      )
+    );
   });
+
+  container.appendChild(row);
 }
 
 
-createGallery('gallery');
+
+createGallery('skills');

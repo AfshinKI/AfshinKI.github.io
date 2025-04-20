@@ -70,7 +70,7 @@ function createGalleryItem(id, src, alt, caption) {
   div.className = 'card text-secondary col-lg-3 col-md-6 col-sm-10 p-0 border-0 shadow-sm position-relative';
   div.innerHTML = `
       <div role="button" data-bs-toggle="modal" data-bs-target="#${id}${modalPostFix}">
-        <img src="${src}" alt="${alt}" class="card-img-top" style="height: 200px; object-fit: cover;">
+        <img src="${src}" alt="${alt}" class="card-img-top object-fit-cover" style="height: 200px">
         <div class="card-body">
           <h5 class="card-title text-center">${caption}</h5>
         </div>
@@ -98,7 +98,7 @@ function createModal(id, src, heading, text, skillCaption, bullets) {
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-secondary text-justify">
-          <img src="${src}" alt="${heading}" class="img-fluid mb-3" style="height: 200px; width: 100%; object-fit: cover;">
+          <img src="${src}" alt="${heading}" class="img-fluid mb-3 object-fit-cover" style="height: 200px; width: 100%;">
           <p class="text-justify">${text}</p>
           <p>${skillCaption}</p>
           <ul>

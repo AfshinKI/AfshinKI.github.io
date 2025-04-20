@@ -27,10 +27,10 @@ const projects = [
 
 function projectItem(id, src, alt, target, caption, text) {
     const div = document.createElement('div');
-    div.className = 'col-lg-3 col-md-6 col-sm-10 p-0 border-0 shadow-sm position-relative';
+    div.className = 'card rounded-0 col-lg-3 col-md-6 col-sm-10 p-0 border-0 shadow-sm position-relative';
     div.innerHTML = `
-        <a href="${target}" class="text-decoration-none text-reset">
-            <img src="${src}" alt="${alt}" class="card-img-top" style="height: 200px; object-fit: cover;">
+        <a href="${target}">
+            <img src="${src}" alt="${alt}" class="card-img-top object-fit-cover" style="height: 200px;">
             <div class="card-img-overlay text-light d-flex flex-column justify-content-center" style="background-color: rgba(0,0,0, 0.5);">
                 <h5 class="card-title">${caption}</h5>
                 <p class="card-text text-justify">${text}</p>

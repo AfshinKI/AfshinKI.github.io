@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="css/navbar.css">
+<header class="header fixed-top" style="z-index: 100; background-color: rgba(0,0,0,0.6);">
+    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
+        <a href="/">
+            <img src="figures/Innovetron_Logo.png" alt="INNOVETRON" height="40">
+        </a>
+        <button class="navbar-toggler custom-toggler" id="menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+             <span></span>
+             <span></span>
+             <span></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="navbar-nav ms-auto text-end">
+            <li class="nav-item active"><a href="/index.html#home" class="nav-link scroll-link">Home</a></li>
+            <li class="nav-item"><a href="/index.html#services" class="nav-link scroll-link">Skills</a></li>
+            <li class="nav-item"><a href="/index.html#aboutUs" class="nav-link scroll-link">About</a></li>
+            <li class="nav-item"><a href="team.html" class="nav-link scroll-link">Team</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link scroll-link">Contact</a></li>
+        </ul>
+        </div>
+    </nav>
+    </div>
+</header>
+<script>
+    $(document).ready(function () {
+        // Collapse navbar on nav link click
+        $('.navbar-collapse .nav-link').on('click', function(){
+            $('.navbar-collapse').collapse('hide');
+            $('#menu-toggle').removeClass('open');
+        });
+        // Toggle menu icon class
+        $('#menu-toggle').on('click', function(){
+            $(this).toggleClass('open');
+        });
+    });
+</script>

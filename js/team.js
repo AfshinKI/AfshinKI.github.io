@@ -56,4 +56,4 @@ function createStory(attachTo) {
   container.appendChild(row);
 }
 
-createStory('story');
+createStory('team-contents');

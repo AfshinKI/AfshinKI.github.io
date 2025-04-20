@@ -68,6 +68,11 @@ section {
     padding: 56px 0;
 }
 
+section .heading {
+  /* upper case */
+  text-transform: uppercase;
+}
+
 /* Home section */
 #home img {
     width: 100%;

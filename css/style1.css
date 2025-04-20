@@ -107,7 +107,7 @@ section .heading {
 }
 
 /* Service section */
-#projects .overlay {
+#services .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -125,7 +125,7 @@ section .heading {
   border-radius: 0.375rem; /* Bootstrap default card border-radius (rounded) */
 }
 
-#projects .card:hover .overlay {
+#services .card:hover .overlay {
   opacity: 1;
   filter: alpha(opacity=100);
 }

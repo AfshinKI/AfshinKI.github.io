@@ -1,53 +1,148 @@
-const aboutItems = [
+
+const galleryItems = [
   {
-    id: 'excel',
-    icon: 'fa fa-desktop',
-    caption: 'What I excell at?',
+    id: 'electronics',
+    src: 'figures/Elcectronics.JPG',
+    alt: 'Programming',
+    caption: 'Analog and Digital Electronics',
+    heading: 'Analog and Digital Electronics',
     text:
-        'I excel at electronic, hardware, and embedded skillsets, offering a wide range of expertise from circuit design and advanced PCB development to innovative software and firmware developments. I can assist you in creating custom solutions that meet the highest quality and regulatory standards, ensuring reliability and performance. With years of experience in areas such as analog and digital circuit design, FPGA board design, and high-speed electronics, I am your perfect candidate. Whether you need firmware for microcontroller-based systems, desktop applications for various platforms, or FPGA programming for hardware acceleration, I have the capabilities to bring your ideas to life with precision and excellence.'
+        'Leverage my years of experience in electronics. I possess extensive experience in creating electronics for various fields including medical and industrial applications throughout my career. I excel in all phases of electrical design, from concept to implementation. I emphasize optimizing performance, integrating seamlessly, and delivering reliable solutions for your unique needs. Whether it\'s designing cutting-edge medical devices or pushing the boundaries of innovation, I can join your team and turn your ideas into reality with precision and excellence.',
+    skillCaption: 'Some of my skills include:',
+    bullets: [
+      'FPGA based board design',
+      'High-speed Signal design',
+      'Application specific PCIe cards',
+      'Analog / mixed signal design',
+      'Sensors and signal conditioning',
+      'Medical system electronics',
+      'Fail-safe safety electronics',
+    ],
   },
   {
-    id: 'hire',
-    icon: 'fa fa-check-square',
-    caption: 'Why hire me?',
+    id: 'pcb',
+    src: 'figures/pcb.jpg',
+    alt: 'Programming',
+    caption: 'Printed Circuit Board (PCB)',
+    heading: 'Printed Circuit Board (PCB)',
     text:
-        'Choose me for your electronic and embedded needs because I am a field expert, with over 9 years of collective experience. My proven track record speaks volumes. With a meticulous eye for detail and an unwavering commitment to excellence, I guarantee that every project not only meets but surpasses expectations. Entrust me to actualize your vision with professionalism, expertise, and an unwavering dedication to excellence. Detailed Work experience will be provided uopn request.'
+        'As a dedicated team member, I specialize in tailoring PCB design to meet the most demanding requirements of modern electronic systems. My skills ensure that your PCB designs are optimized for performance, reliability, and manufacturability. From schematic capture to production file generation, I provide comprehensive support at every stage of the design process.',
+    skillCaption: 'Highlights of my skills includes:',
+    bullets: [
+      'Proficiency in ECAD tools: Altium Designer and KiCad',
+      'Seamless execution of schematic capture, library creation, and maintenance',
+      'Design and development of complex, mixed-signal, and multi-layer PCBs',
+      'Expertise in high-speed, sensitive, and high I/O-count designs',
+      'Robust design practices ensuring EMC (Electromagnetic Compatibility) and signal integrity',
+      'Precise stack-up and build-up design, incorporating controlled impedance',
+      'Efficient production file generation and streamlined ordering processes',
+      'Thorough component sourcing and coordination with fabrication and assembly houses',
+    ],
   },
   {
-    id: 'where',
-    icon: 'fa fa-map-marker',
-    caption: 'Where am I?',
+    id: 'software',
+    src: 'figures/software.jpg',
+    alt: 'Programming',
+    caption: 'Software & Firmware',
+    heading: 'Software & Firmware',
     text:
-        'I am proud to call Edmonton, Alberta, our home base. From here, I am equipped to collaborate with your team both locally and globally. By hiring me, you\'ll experience my creativity, expertise, and dedication at its finest.'
-  }
+        'Utilize my expertise in software development. I offer a wide range of software development services tailored to meet your specific needs. I collaborate closely with you to define software specifications and requirements, develop efficient concepts, and produce prototype-level and production-ready code.',
+    skillCaption: 'Here\'s an overview of I excell at:',
+    bullets: [
+      'C / C++ coding for microcontrollers such as AVR, STM',
+      'C / C++ coding for software development for Windows and Linux',
+      'Verilog and HLS for AMD FPGAs',
+      'Embedded software development for IoT devices',
+      'Real-time embedded systems programming',
+      'Algorithm development and optimization',
+      'GUI (Graphical User Interface) design and development',
+      'Integration with hardware components',
+      'GPU and CUDA programming',
+    ],
+
+  },
 ];
 
-function createAboutItem(id, icon, caption, text) {
+const modalPostFix = '-modal';
+
+function createGalleryItem(id, src, alt, caption) {
   const div = document.createElement('div');
-  div.className = 'col-lg-3 col-md-6 col-sm-10';
+  div.className = 'card text-secondary col-lg-3 col-md-6 col-sm-10 p-0 border-0 shadow-sm position-relative';
   div.innerHTML = `
-    <h3>
-      <i class="${icon} text-innovetron"></i>
-      &nbsp ${caption}
-    </h3>
-    <p class="text-justify">${text}</p>
+      <div role="button" data-bs-toggle="modal" data-bs-target="#${id}${modalPostFix}">
+        <img src="${src}" alt="${alt}" class="card-img-top" style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title text-center">${caption}</h5>
+        </div>
+        <div class="overlay">
+          <i class="fa fa-search-plus"></i>
+        </div>
+      </div>
   `;
   return div;
 }
 
-function createAboutItems(attachTo) {
+
+function createModal(id, src, heading, text, skillCaption, bullets) {
+  const div = document.createElement('div');
+  div.className = 'modal fade';
+  div.id = `${id}${modalPostFix}`;
+  div.setAttribute('tabindex', '-1');
+  div.setAttribute('aria-labelledby', `${id}-label`);
+  div.setAttribute('aria-hidden', 'true');
+  div.innerHTML = `
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title text-innovetron" id="${id}-label">${heading}</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-secondary text-justify">
+          <img src="${src}" alt="${heading}" class="img-fluid mb-3" style="height: 200px; width: 100%; object-fit: cover;">
+          <p class="text-justify">${text}</p>
+          <p>${skillCaption}</p>
+          <ul>
+            ${bullets.map(bullet => `<li>${bullet}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  `;
+  return div;
+}
+
+function createGallery(attachTo) {
   const container = document.getElementById(attachTo);
   if (!container) {
     console.error(`Element with id ${attachTo} not found.`);
     return;
   }
+
   container.innerHTML = ''; // Clear existing content
-  container.className = 'd-flex flex-wrap justify-content-center gap-4 px-4';
-  
-  aboutItems.forEach(item => {
+
+  const row = document.createElement('div');
+  row.className = 'row justify-content-center gap-4 px-4';
+
+  galleryItems.forEach(item => {
+    row.appendChild(createGalleryItem(item.id, item.src, item.alt, item.caption));
+
     container.appendChild(
-        createAboutItem(item.id, item.icon, item.caption, item.text));
+      createModal(
+        item.id,
+        item.src,
+        item.heading,
+        item.text,
+        item.skillCaption,
+        item.bullets
+      )
+    );
   });
+
+  container.appendChild(row);
 }
 
-createAboutItems('service-contents');
+createGallery('service-contents');

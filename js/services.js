@@ -50,4 +50,4 @@ function createAboutItems(attachTo) {
   });
 }
 
-createAboutItems('about');
+createAboutItems('service-contents');

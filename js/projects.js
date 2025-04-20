@@ -145,6 +145,4 @@ function createGallery(attachTo) {
   container.appendChild(row);
 }
 
-
-
-createGallery('skills');
+createGallery('project-contents');

@@ -24,7 +24,7 @@ const aboutItems = [
 
 function createAboutItem(id, icon, caption, text) {
   const div = document.createElement('div');
-  div.className = 'col-lg-3 col-md-6 col-sm-10';
+  div.className = '';
   div.innerHTML = `
     <h3>
       <i class="${icon} text-innovetron"></i>

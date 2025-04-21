@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="42.364582mm"
+   height="42.364582mm"
+   viewBox="0 0 42.364582 42.364582"
+   version="1.1"
+   id="svg9124"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="Innovetron_Logo2.svg"
+   inkscape:export-filename="Innovetron_Logo2.png"
+   inkscape:export-xdpi="959.29193"
+   inkscape:export-ydpi="959.29193"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview9126"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="false"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     shape-rendering="auto"
+     showborder="false"
+     inkscape:zoom="5.0495043"
+     inkscape:cx="108.92158"
+     inkscape:cy="97.831386"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs9121" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-65.665011,-46.991358)">
+    <g
+       id="g10261">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.74287;stroke-dasharray:none;stroke-opacity:1"
+         id="rect5181-1-9"
+         width="38.621712"
+         height="38.621712"
+         x="67.536446"
+         y="48.862793"
+         rx="0.74857354" />
+      <ellipse
+         style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.965195;stroke-dasharray:none;stroke-opacity:1"
+         id="path6497-3-1"
+         cx="109.68363"
+         cy="-16.12925"
+         rx="5.0398431"
+         ry="24.757877"
+         transform="matrix(0.68799874,0.72571188,-0.70586742,0.70834397,0,0)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.381px;font-family:'Segoe UI Historic';-inkscape-font-specification:'Segoe UI Historic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.48783;stroke-dasharray:none;stroke-opacity:1"
+         x="88.101418"
+         y="83.092056"
+         id="text7316-9-3"
+         transform="scale(1.0003937,0.99960645)"><tspan
+           sodipodi:role="line"
+           id="tspan7314-5-9"
+           style="stroke-width:1.48783"
+           x="88.101418"
+           y="83.092056">iN</tspan></text>
+    </g>
+  </g>
+</svg>

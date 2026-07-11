@@ -1,24 +1,24 @@
 const aboutItems = [
   {
-    id: 'excel',
+    id: 'what',
     icon: 'fa fa-desktop',
-    caption: 'What I excell at?',
+    caption: 'What we do',
     text:
-        'I excel at electronic, hardware, and embedded skillsets, offering a wide range of expertise from circuit design and advanced PCB development to innovative software and firmware developments. I can assist you in creating custom solutions that meet the highest quality and regulatory standards, ensuring reliability and performance. With years of experience in areas such as analog and digital circuit design, FPGA board design, and high-speed electronics, I am your perfect candidate. Whether you need firmware for microcontroller-based systems, desktop applications for various platforms, or FPGA programming for hardware acceleration, I have the capabilities to bring your ideas to life with precision and excellence.'
+        'INNOVETRON is an electronics design consultancy specializing in high-speed, high-precision systems: FPGA-based boards, mixed-signal and low-noise analog design, and the embedded software that drives them. We serve medical and industrial clients across the complete development cycle — architecture, schematic, PCB layout, firmware, bring-up, and validation — whether you need a focused design review or a full product designed from scratch.'
   },
   {
-    id: 'hire',
+    id: 'why',
     icon: 'fa fa-check-square',
-    caption: 'Why hire me?',
+    caption: 'Why INNOVETRON',
     text:
-        'Choose me for your electronic and embedded needs because I am a field expert, with over 9 years of collective experience. My proven track record speaks volumes. With a meticulous eye for detail and an unwavering commitment to excellence, I guarantee that every project not only meets but surpasses expectations. Entrust me to actualize your vision with professionalism, expertise, and an unwavering dedication to excellence. Detailed Work experience will be provided uopn request.'
+        'You work directly with the engineer doing the design: a PhD, P.Eng with 10+ years of experience, three U.S. patent filings, 20+ peer-reviewed publications, and a track record of leading safety-critical electronics through IEC 60601 compliance and Health Canada authorization. Small-firm attention with big-firm rigor — every design is version-controlled, reviewed, and released through automated checks, so quality is built into the process rather than promised.'
   },
   {
-    id: 'where',
+    id: 'how',
     icon: 'fa fa-map-marker',
-    caption: 'Where am I?',
+    caption: 'How we work',
     text:
-        'I am proud to call Edmonton, Alberta, our home base. From here, I am equipped to collaborate with your team both locally and globally. By hiring me, you\'ll experience my creativity, expertise, and dedication at its finest.'
+        'Based in Edmonton, Alberta, and working with clients locally and globally. We are remote-first and responsive: with modern collaboration and CI tooling, you see design progress continuously — live design reviews, versioned releases, and automatically generated documentation — not just a package at the end.'
   }
 ];
 

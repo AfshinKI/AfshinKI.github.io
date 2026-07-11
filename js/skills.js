@@ -41,7 +41,7 @@ const galleryItems = [
   },
   {
     id: 'software',
-    src: 'figures/software.JPG',
+    src: 'figures/software.jpg',
     alt: 'FPGA, DSP, and firmware development',
     caption: 'FPGA, DSP & Firmware',
     heading: 'FPGA, DSP & Firmware',

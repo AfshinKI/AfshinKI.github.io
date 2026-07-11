@@ -1,15 +1,11 @@
 const stories = [
-  'Afshin\'s journey the realm of electronics began with a humble gift, a tiny police car adorned with blinking LEDs, igniting a passion that would shape his life\'s trajectory. From the tender age of six, curiosity propelled him to dismantle and explore every electronic gadget, laying the foundation for a lifelong fascination with innovation.',
+  'INNOVETRON was founded by Afshin Kashani, PhD, P.Eng — an engineer whose fascination with electronics started early: a blinking-LED toy car at six, a first printed circuit board at eleven, a security system for the family store at fourteen, and national recognition in electronics by twenty-one.',
 
-  'By the age of 11, Afshin had already designed his first printed circuit board, and by 14, he crafted a security system for his family\'s store. His knack for electronics only deepened as he matured, culminating in national recognition for his prowess at the age of 21. Armed with ambition and an insatiable thirst for knowledge, Afshin embarked on a journey to transform his childhood passion into a career that would impact millions.',
+  'He earned his PhD at the University of Alberta in Prof. Roger Zemp\'s lab, where he co-invented transparent ultrasound transducer arrays and designed high-voltage switching electronics that outperformed commercial state of the art — work behind three U.S. patent filings and more than twenty peer-reviewed publications with hundreds of citations.',
 
-  'Eight years ago, Afshin made a bold decision to pursue his dreams beyond the confines of his homeland, guided by Eleanor Roosevelt\'s timeless wisdom: "The future belongs to those who believe in the beauty of their dreams." Leaving behind familiarity, he embraced the unknown, driven by an unwavering faith in the power of his aspirations.',
+  'In industry, Afshin built and led a five-engineer electronics team developing ophthalmic laser devices, taking safety-critical hardware from concept through IEC 60601 compliance and Health Canada authorization. Today he works at the forefront of FPGA-based data acquisition and precision sensing systems, and brings that same engineering to INNOVETRON\'s clients.',
 
-  'Under the mentorship of Prof. Roger Zemp, Afshin honed his skills and expanded his horizons, culminating in the completion of his PhD. Grateful for the guidance and camaraderie of his mentors and peers, Afshin bid farewell to Zemp Lab, ready to embark on a new chapter. He started as an Electronics Team Lead at a medical device company, eager to contribute his expertise to groundbreaking projects and continue his journey of innovation.',
-
-  'Today, Afshin stands at the forefront of innovation, poised to contribute his expertise to groundbreaking projects. With each achievement, he remains humble, acknowledging the invaluable support of his mentors, colleagues, and friends.',
-
-  'Afshin\'s journey exemplifies the transformative power of passion, perseverance, and unwavering dedication. As he continues to push the boundaries of possibility, he remains guided by the belief that every dream is worth pursuing, no matter the sacrifices along the way.'
+  'That combination — an inventor\'s curiosity, regulatory discipline, and hands-on delivery from schematic to validated hardware — is what INNOVETRON puts behind every project.'
 ];
 
 function createStory(attachTo) {

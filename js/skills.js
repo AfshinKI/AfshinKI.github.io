@@ -60,24 +60,6 @@ const galleryItems = [
     ],
 
   },
-  {
-    id: 'medical',
-    src: 'figures/circuit_design.jpg',
-    alt: 'Medical and regulated device development',
-    caption: 'Medical & Regulated Devices',
-    heading: 'Medical & Regulated Devices',
-    text:
-        'Bringing a device into a regulated market takes more than a good circuit. INNOVETRON has taken safety-critical electronics from concept through IEC 60601 compliance and Health Canada authorization — and brings that discipline to every project, regulated or not.',
-    skillCaption: 'What we deliver:',
-    bullets: [
-      'IEC 60601-1 / -1-2 design and compliance',
-      'Risk management per ISO 14971 (FMEA)',
-      'Design within ISO 13485 quality systems',
-      'Verification & validation planning and documentation',
-      'Fail-safe architectures for safety-critical functions',
-      'Support for regulatory submissions',
-    ],
-  },
 ];
 
 const modalPostFix = '-modal';

@@ -20,8 +20,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="css/style1.css?v=20260913-3">
-  <script src="js/site.js" defer></script>
+  <link rel="stylesheet" href="css/style1.css?v=20260913-4">
+  <script src="js/site.js?v=20260913-4" defer></script>
+  <script src="js/contact.js?v=20260913-4" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -160,30 +161,38 @@
     <section id="contact" class="section contact-section">
       <div class="container contact-grid">
         <div><p class="eyebrow">Project enquiries</p><h2>Tell us about<br> your project.</h2><p class="section-copy">A brief overview is enough to start: what you’re developing, the challenge you’re facing, and your expected timeline.</p><p class="contact-detail">Edmonton, Alberta, Canada<br> <span>Local and remote engagements</span></p></div>
-        <form method="post" action="https://formspree.io/f/moqgyplv" id="contactfrm">
-          <div class="form-row">
-            <div><label for="message-name">Name <span>(required)</span></label><input id="message-name" name="name" autocomplete="name" required placeholder="Your name" maxlength="150"></div>
-            <div><label for="message-email">Email <span>(required)</span></label><input id="message-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com" maxlength="254"></div>
-          </div>
-          <div class="form-row">
-            <div><label for="company">Company <span>(optional)</span></label><input id="company" name="company" autocomplete="organization" placeholder="Company or organisation" maxlength="200"></div>
-            <div>
-              <label for="service">How can we help?</label>
-              <select id="service" name="service">
-                <option value="">Select an area</option>
-                <option>Electronics &amp; PCB design</option>
-                <option>FPGA &amp; real-time DSP</option>
-                <option>Firmware &amp; system software</option>
-                <option>Agentic development pipelines</option>
-                <option>Technical review / other</option>
-              </select>
+        <form method="post" action="https://api.web3forms.com/submit" id="contactfrm">
+          <input type="hidden" name="access_key" value="d6168f6d-acda-49b0-ab14-590957da970a">
+          <input type="hidden" name="subject" value="Innovetron — Project enquiry">
+          <input type="hidden" name="from_name" value="Innovetron website">
+          <input type="hidden" name="redirect" value="https://innovetron.com/thanks.html">
+          <input type="checkbox" name="botcheck" class="form-botcheck" tabindex="-1" aria-hidden="true" hidden>
+          <fieldset>
+            <legend class="visually-hidden">Project enquiry</legend>
+            <div class="form-row">
+              <div><label for="message-name">Name <span>(required)</span></label><input id="message-name" name="name" autocomplete="name" required placeholder="Your name" maxlength="150"></div>
+              <div><label for="message-email">Email <span>(required)</span></label><input id="message-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com" maxlength="254"></div>
             </div>
-          </div>
-          <label for="message">Your project <span>(required)</span></label>
-          <textarea id="message" name="comment" rows="5" required placeholder="Project overview, technical requirements, and timeline." maxlength="10000"></textarea>
-          <p class="form-note">Please keep your initial message non-confidential. Enquiries are processed by <a href="https://formspree.io/legal/privacy-policy/">Formspree</a> so we can respond.</p>
-          <button class="button button-lime" type="submit">Send enquiry <span aria-hidden="true">↗</span></button>
-          <p id="form-status" role="status" aria-live="polite"></p>
+            <div class="form-row">
+              <div><label for="company">Company <span>(optional)</span></label><input id="company" name="company" autocomplete="organization" placeholder="Company or organisation" maxlength="200"></div>
+              <div>
+                <label for="service">How can we help?</label>
+                <select id="service" name="service">
+                  <option value="">Select an area</option>
+                  <option>Electronics &amp; PCB design</option>
+                  <option>FPGA &amp; real-time DSP</option>
+                  <option>Firmware &amp; system software</option>
+                  <option>Agentic development pipelines</option>
+                  <option>Technical review / other</option>
+                </select>
+              </div>
+            </div>
+            <label for="message">Your project <span>(required)</span></label>
+            <textarea id="message" name="message" rows="5" required placeholder="Project overview, technical requirements, and timeline." maxlength="10000"></textarea>
+            <p class="form-note">We’ll use these details to respond to your enquiry.</p>
+            <button class="button button-lime" type="submit"><span data-submit-label>Send enquiry</span> <span aria-hidden="true">↗</span></button>
+          </fieldset>
+          <p id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
         </form>
       </div>
     </section>

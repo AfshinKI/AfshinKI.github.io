@@ -29,28 +29,3 @@ document.querySelectorAll('[data-service]').forEach((link) => {
   });
 });
 document.querySelector('#year').textContent = new Date().getFullYear();
-const form = document.querySelector('#contactfrm');
-const status = document.querySelector('#form-status');
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const button = form.querySelector('button[type="submit"]');
-  if (button.disabled) return;
-  button.disabled = true;
-  status.textContent = 'Sending your enquiry…';
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 20000);
-  try {
-    const response = await fetch(form.action, {
-      method: 'POST', body: new FormData(form),
-      headers: { Accept: 'application/json' }, signal: controller.signal
-    });
-    if (!response.ok) throw new Error('Submission failed');
-    status.textContent = 'Thank you. Your enquiry has been sent. We’ll respond using the email you provided.';
-    form.reset();
-  } catch {
-    status.textContent = 'We couldn’t confirm delivery. Your message is still here. Please try again in a moment.';
-  } finally {
-    clearTimeout(timeout);
-    button.disabled = false;
-  }
-});

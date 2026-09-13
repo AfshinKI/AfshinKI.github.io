@@ -119,6 +119,9 @@ nav .nav-contact { border: 1px solid #687360; color: white; padding: 11px 16px; 
 .contact-detail { margin: 44px 0 0; font-size: 14px; }
 .contact-detail span { color: #aebba4; font-size: 13px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+#contactfrm fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+input[type="hidden"], .form-botcheck { display: none; }
 label { display: block; font-size: 13px; margin-bottom: 9px; }
 label span { color: #b3bdaa; font-size: 11px; }
 input, select, textarea { display: block; width: 100%; min-width: 0; border: 1px solid #58614f; border-radius: 0; color: #fff; background: #1b211a; padding: 13px 12px; font-size: 14px; margin-bottom: 24px; }
@@ -129,6 +132,13 @@ input::placeholder, textarea::placeholder { color: #afbba5; opacity: 1; }
 .form-note a { text-decoration: underline; }
 #form-status { font-size: 14px; margin: 18px 0 0; color: var(--lime); }
 #form-status:empty { display: none; }
+#form-status[data-state="error"] { color: #f4c9b8; }
+.confirmation-page { min-height: 100vh; display: flex; flex-direction: column; background: var(--dark); color: white; }
+.confirmation-main { flex: 1; display: grid; align-items: center; padding-block: 80px; }
+.confirmation-copy { max-width: 680px; }
+.confirmation-copy .eyebrow { color: var(--lime); }
+.confirmation-copy h1 { font-size: clamp(40px, 7vw, 72px); line-height: 1.15; letter-spacing: -2px; margin-bottom: 28px; }
+.confirmation-copy > p:not(.eyebrow) { color: #bdc5bb; font-size: 18px; max-width: 540px; margin-bottom: 32px; }
 footer { background: #101510; color: #b4beac; }
 .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-block: 36px; border-bottom: 1px solid #35402e; }
 .footer-top .brand { color: #fff; }

@@ -40,6 +40,7 @@ On 2026-09-13:
 
 - Submitted one labelled test enquiry through the actual form in Chrome at `http://localhost:8000/`; the page confirmed receipt, cleared fields, and remained on Innovetron.
 - Confirmed the matching email in the configured Gmail **Inbox**, including name, email, company, service, message, subject, and Reply-To.
+- Submitted a second labelled test from the hosted PR preview at revision `9569338b3e968b05b4b0fa4ab3e02a66bea53b7e`. Confirmed its arrival in Gmail Inbox and that Reply-To used the submitted test alias rather than the receiving mailbox. The preview stayed on the enquiry page; images loaded and the browser console showed no errors or warnings.
 - Checked the contact layout at desktop and 390px mobile width, with no horizontal overflow. Browser validation blocked invalid email and whitespace-only messages without sending.
 - Automated tests cover explicit success, HTTP/rejected/malformed responses, rate limits, network errors, actual abort handling, duplicate-send protection, retry, input validation, and clearing an old confirmation when a new enquiry starts. Static checks validate the public key and fallback target.
 

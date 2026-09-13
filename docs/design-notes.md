@@ -10,7 +10,9 @@ Agentic development is a service requested by the owner. The diagram is an illus
 
 ## Visual identity and assets
 
-Graphite, warm off-white, and pale green; Manrope headings and DM Sans body type with local fallback fonts. The custom circuit mark is inline SVG. No runtime UI libraries or animation libraries are required.
+Graphite, warm off-white, and restrained green; Manrope headings and DM Sans body type with system-font fallbacks. The original `figures/Innovetron_Logo.png` is used without modification in the header, footer, favicon, and touch icon. No runtime UI libraries or animation libraries are required.
+
+The final editorial pass uses specific engineering descriptions, open service columns, larger supporting text, and a simpler workflow illustration. A malformed electronics option in the enquiry selector was also corrected; all four service links must preselect their matching option during browser verification.
 
 The hero and social-sharing image use the existing, unmodified `figures/circuit_sample.jpg`, a real Innovetron board photograph. No generated photography is included.
 

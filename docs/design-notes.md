@@ -24,6 +24,6 @@ The first PR revision contained an invalid multiline font import introduced duri
 
 Previewed in Chrome at desktop, 1440px, 768px, 390px, and 320px widths. No horizontal overflow at tested sizes; hero asset and fragment links resolve. Checked mobile navigation, service selection, and browser console. Keyboard focus styles, skip link, reduced-motion support, visible form labels, and native required/email validation are included.
 
-Run `node --test tests/*.test.cjs` for mocked submission success, HTTP/network/abort failure handling, and duplicate-send protection. These checks do not contact Formspree. Live inbox delivery has not been tested.
+Run `node --test tests/*.test.cjs` for isolated submission checks, service-option mappings, and CSS regression protection. Automated checks do not send email. The replacement contact integration also has a live inbox verification; see [contact delivery](contact-delivery.md).
 
-The existing Formspree endpoint is retained. Google Fonts and Formspree remain external services. Content is static HTML; the form has a native POST fallback when JavaScript is unavailable. Changes must be reviewed and merged through the PR before the production GitHub Pages site updates.
+Web3Forms handles contact delivery externally; Google Fonts provides typography. Content remains static HTML and the form has a native POST fallback when JavaScript is unavailable. Changes must be reviewed and merged through the PR before the production GitHub Pages site updates.

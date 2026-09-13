@@ -1,1 +1,11 @@
 .DS_Store
+
+# Local credentials must never enter this public site repository.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json

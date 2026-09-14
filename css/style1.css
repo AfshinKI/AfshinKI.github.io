@@ -12,6 +12,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 body { margin: 0; color: var(--ink); font: 16px/1.65 var(--font); background: var(--paper); }
 a { color: inherit; text-decoration: none; }
+.icon-arrow { display: inline-block; width: 16px; height: 16px; flex-shrink: 0; vertical-align: -.2em; }
 button, input, select, textarea { font: inherit; }
 button, a { touch-action: manipulation; }
 button { cursor: pointer; }
@@ -40,7 +41,7 @@ nav { display: flex; align-items: center; gap: 28px; font-size: 13px; }
 nav a { padding: 10px 0; color: #d2d7cf; transition: color .2s; }
 nav a:hover { color: var(--lime); }
 nav .nav-contact { border: 1px solid #687360; color: white; padding: 11px 16px; }
-.nav-contact span { margin-left: 18px; }
+.nav-contact .icon-arrow { margin-left: 18px; }
 .menu-toggle { display: none; }
 
 /* The original board photograph remains the visual focus. */
@@ -111,7 +112,7 @@ nav .nav-contact { border: 1px solid #687360; color: white; padding: 11px 16px; 
 .about-links { display: flex; flex-wrap: wrap; gap: 20px 28px; font-size: 13px; }
 .about-links a { border-bottom: 1px solid #a7b59a; padding: 8px 0; }
 .about-links a:hover { color: #446428; }
-.about-links span { margin-left: 12px; }
+.about-links .icon-arrow { margin-left: 12px; }
 
 /* Enquiries */
 .contact-section { background: var(--dark); color: white; }
@@ -144,7 +145,7 @@ footer { background: #101510; color: #b4beac; }
 .footer-top .brand { color: #fff; }
 .footer-top p { margin: 0; font-size: 13px; }
 .footer-top > a:last-child { font-size: 12px; padding: 10px 0; }
-.footer-top > a:last-child span { margin-left: 20px; }
+.footer-top > a:last-child .icon-arrow { margin-left: 20px; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 24px; padding-block: 24px; font-size: 11px; }
 
 @media (min-width: 1500px) {

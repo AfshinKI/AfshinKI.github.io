@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UMX — Ultrasound development platform | Innovetron</title>
+  <meta name="description" content="UMX brings together modular ultrasound electronics, FPGA data handling, and custom Yocto Linux for NXP i.MX8M Plus. In development.">
+  <link rel="icon" href="../figures/Innovetron_Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="../css/style1.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="story-header">
+    <div class="container">
+      <a class="brand" href="../index.html" aria-label="Innovetron home"><img src="../figures/Innovetron_Logo.png" alt="" width="42" height="42"><span>innovetron</span></a>
+      <a class="story-back" href="../index.html#projects">← All projects</a>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container story-intro">
+      <p class="eyebrow">UMX / Ultrasound systems</p>
+      <h1>Ultrasound development platform.</h1>
+      <p class="lead">A modular ultrasound system under development, combining acquisition electronics, FPGA data handling, and embedded Linux on NXP i.MX8M Plus.</p>
+      <span class="project-status">Independent project · In development</span>
+    </div>
+    <div class="container story-summary">
+      <div>
+        <h2>From acquisition to application.</h2>
+        <p>UMX is being developed as a configurable platform for ultrasound acquisition, processing, and visualisation. The design supports work on custom transmit/receive sequences and imaging methods, with separate acquisition and processing modules.</p>
+        <p>Current work covers the system architecture, initial UTR schematics, and a custom Linux image built for the i.MX8M Plus reference board.</p>
+      </div>
+      <dl class="project-facts">
+        <div><dt>Scope</dt><dd>Electronics, FPGA, and embedded Linux</dd></div>
+        <div><dt>Front end</dt><dd>UTR · 32-channel transmit/receive module</dd></div>
+        <div><dt>Processor</dt><dd>NXP i.MX8M Plus</dd></div>
+        <div><dt>Linux platform</dt><dd>Yocto Project · Custom image and application layer</dd></div>
+      </dl>
+    </div>
+    <section class="container umx-visual umx-system" aria-labelledby="umx-architecture-title">
+      <div>
+        <p class="eyebrow">System architecture</p>
+        <h2 id="umx-architecture-title">Acquisition<br>and processing.</h2>
+        <p>The architecture assigns transmit and receive functions to UTR, acquisition timing and data transfer to an FPGA, and application processing to i.MX8M Plus. PCIe connects the FPGA and processor.</p>
+        <p>The modular design separates the ultrasound channel hardware from the processing platform, allowing each part to be developed and integrated in stages.</p>
+        <p class="diagram-caption">Architecture overview · System integration in development</p>
+      </div>
+      <div class="umx-diagram">
+  <div class="umx-node umx-acquisition"><span class="umx-node-label">Acquisition</span><strong>UTR front end</strong><span>32-channel transmit / receive module</span></div>
+  <div class="umx-connection"><span>Acquired data &amp; control</span></div>
+  <div class="umx-node"><span class="umx-node-label">Data handling</span><strong>FPGA</strong><span>Timing, acquisition &amp; data transfer</span></div>
+  <div class="umx-connection"><span>PCIe</span></div>
+  <div class="umx-node umx-processing"><span class="umx-node-label">Application processing</span><strong>NXP i.MX8M Plus</strong><span>Custom Yocto Linux · Application software</span></div>
+</div>
+    </section>
+    <div class="container story-work">
+      <section class="work-row" aria-labelledby="umx-utr-title">
+        <span class="work-number" aria-hidden="true">01</span>
+        <div>
+          <h2 id="umx-utr-title">UTR acquisition electronics</h2>
+          <span class="work-stage">Architecture and initial schematics</span>
+        </div>
+        <div>
+          <p>UTR is the 32-channel ultrasound transmit/receive daughterboard within UMX. Initial schematic work covers the transmit and receive paths, power, clocking, and interfaces to the main platform.</p>
+          <p>The board is at the initial design stage. Schematic review, PCB layout, manufacture, and prototype testing are the next hardware steps.</p>
+        </div>
+      </section>
+      <section class="work-row" aria-labelledby="umx-linux-title">
+        <span class="work-number" aria-hidden="true">02</span>
+        <div>
+          <h2 id="umx-linux-title">Custom embedded Linux</h2>
+          <span class="work-stage">Yocto image built for the reference board</span>
+        </div>
+        <div>
+          <p>A custom Yocto image has been built for the NXP FRDM i.MX8M Plus development board. It provides the software base for application development and hardware integration within UMX.</p>
+          <p>The build uses NXP board support with a Docker build environment, a project-specific application layer, and an image recipe that defines the required software.</p>
+          <ul>
+            <li>Python runtime and application packaging.</li>
+            <li>Remote access, package management, and GPIO diagnostic tools.</li>
+            <li>Documented image deployment, serial-console access, and board bring-up procedures.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="work-row" aria-labelledby="umx-integration-title">
+        <span class="work-number" aria-hidden="true">03</span>
+        <div>
+          <h2 id="umx-integration-title">System integration</h2>
+          <span class="work-stage">Planned development</span>
+        </div>
+        <div>
+          <p>The system architecture defines an FPGA-to-processor PCIe link for acquired data and control. The wider programme includes signal processing, visualisation, and host interfaces over USB and Ethernet.</p>
+          <p>Subsystem validation and full-system integration will bring the electronics and Linux platform together. Ultrasound image processing and embedded inference are later stages of the programme.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <section class="story-next" aria-label="Project enquiries">
+    <div class="container">
+      <p>Discuss your engineering requirements.</p>
+      <a class="button button-lime" href="../index.html#contact">Get in touch <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+  <footer><div class="container footer-bottom"><span>Innovetron</span><span>Independent engineering consultancy · Canada</span></div></footer>
+</body>
+</html>

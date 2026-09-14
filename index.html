@@ -21,6 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="css/style1.css?v=20260913-4">
+  <link rel="stylesheet" href="css/projects.css">
   <script src="js/site.js?v=20260913-4" defer></script>
   <script src="js/contact.js?v=20260913-4" defer></script>
 </head>
@@ -35,6 +36,7 @@
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">＋</span></button>
       <nav id="main-nav" aria-label="Main navigation">
         <a href="#services">Expertise</a>
+        <a href="#projects">Projects</a>
         <a href="#agentic">Agentic development</a>
         <a href="#approach">How we work</a>
         <a href="#aboutUs">About</a>
@@ -103,6 +105,54 @@
             <a class="service-link" href="#contact" data-service="Firmware & system software">Discuss embedded development <span aria-hidden="true">↗</span></a>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects-section" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="projects-heading">
+          <div><p class="eyebrow">Selected projects</p><h2 id="projects-title">Electronics and<br>embedded systems.</h2></div>
+          <p>Independent development projects, from ultrasound system design to software running on existing hardware.</p>
+        </div>
+        <article class="project-feature project-umx">
+          <div class="project-copy">
+            <div class="project-meta"><span>01 / Ultrasound systems</span><span class="project-status">In development</span></div>
+            <h3>UMX<br>Ultrasound development platform.</h3>
+            <p>A modular ultrasound system under development, spanning acquisition electronics, FPGA data handling, and custom embedded Linux for NXP i.MX8M Plus.</p>
+            <dl class="project-facts">
+              <div><dt>Electronics</dt><dd>UTR transmit/receive module · Initial schematics</dd></div>
+              <div><dt>Embedded Linux</dt><dd>Custom Yocto image for i.MX8M Plus</dd></div>
+            </dl>
+            <a class="project-link" href="projects/umx.html">View UMX <span aria-hidden="true">↗</span></a>
+          </div>
+          <a class="umx-visual" href="projects/umx.html" aria-label="View the UMX ultrasound development project">
+            <div class="umx-visual-top"><span>UMX / Platform architecture</span><span>System design</span></div>
+<div class="umx-diagram">
+  <div class="umx-node umx-acquisition"><span class="umx-node-label">Acquisition</span><strong>UTR front end</strong><span>32-channel transmit / receive module</span></div>
+  <div class="umx-connection"><span>Acquired data &amp; control</span></div>
+  <div class="umx-node"><span class="umx-node-label">Data handling</span><strong>FPGA</strong><span>Timing, acquisition &amp; data transfer</span></div>
+  <div class="umx-connection"><span>PCIe</span></div>
+  <div class="umx-node umx-processing"><span class="umx-node-label">Application processing</span><strong>NXP i.MX8M Plus</strong><span>Custom Yocto Linux · Application software</span></div>
+</div>
+<div class="umx-visual-bottom"><span>Modular ultrasound development platform</span><span>Architecture overview</span></div>
+          </a>
+        </article>
+        <article class="project-feature project-nook">
+          <a class="project-photo" href="projects/nook.html" aria-label="View the NookPanel project">
+            <img src="figures/projects/nook-display.jpg" alt="The NookPanel e-ink display showing weather and a city map" width="960" height="1280" loading="lazy">
+            <span class="photo-caption">NookPanel · Working demonstrator</span>
+          </a>
+          <div class="project-copy">
+            <div class="project-meta"><span>02 / Embedded software</span><span class="project-status">Working demonstrator</span></div>
+            <h3>NookPanel<br>E-ink weather display.</h3>
+            <p>A Nook e-reader repurposed as a weather display, with a custom Android application and Raspberry Pi server. The work covers device integration, scheduled updates, power management, and recovery from failed downloads.</p>
+            <dl class="project-facts">
+              <div><dt>Platform</dt><dd>Android 2.1 + Raspberry Pi</dd></div>
+              <div><dt>Development</dt><dd>Application, server, and device testing</dd></div>
+            </dl>
+            <a class="project-link" href="projects/nook.html">View NookPanel <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
       </div>
     </section>
 

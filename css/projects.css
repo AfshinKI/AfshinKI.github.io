@@ -1,6 +1,6 @@
 .projects-section { background: #eeeee7; }
 .projects-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 60px; margin-bottom: 50px; }
-.projects-heading h2 { margin: 0; }
+.projects-heading h1 { margin: 0; font-size: clamp(38px, 4.5vw, 60px); line-height: 1.15; letter-spacing: -1.8px; }
 .projects-heading > p { max-width: 430px; color: var(--muted); margin: 0 0 3px; }
 .project-feature { display: grid; grid-template-columns: 1fr 1fr; background: var(--paper); }
 .project-photo { position: relative; min-height: 580px; overflow: hidden; background: #2a2b28; }
@@ -10,7 +10,7 @@
 .project-copy { padding: 44px 46px; display: flex; flex-direction: column; align-items: flex-start; }
 .project-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; justify-content: space-between; width: 100%; font-size: 10px; letter-spacing: .7px; text-transform: uppercase; margin-bottom: 42px; }
 .project-status { display: inline-block; border: 1px solid #cad1c1; padding: 5px 9px; letter-spacing: .2px; text-transform: none; }
-.project-copy h3 { font-size: clamp(32px,3.4vw,45px); line-height: 1.16; letter-spacing: -1.5px; margin-bottom: 24px; }
+.project-copy h2 { font-size: clamp(32px,3.4vw,45px); line-height: 1.16; letter-spacing: -1.5px; margin-bottom: 24px; }
 .project-copy > p { color: var(--muted); font-size: 15px; }
 .project-facts { width: 100%; margin: 4px 0 30px; font-size: 12px; }
 .project-facts > div { padding: 12px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 100px 1fr; gap: 12px; }
@@ -72,7 +72,7 @@
 .story-next { background: #eeeee7; padding: 42px 0; }
 .story-next .container { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
 .story-next p { margin: 0; font-size: 23px; }
-@media (max-width: 1100px) { nav { gap: 18px; } .project-copy { padding: 32px; } }
+@media (max-width: 1100px) { .project-copy { padding: 32px; } }
 @media (max-width: 900px) { .projects-heading { display: block; } .projects-heading > p { max-width: 600px; margin-top: 24px; } .project-feature { grid-template-columns: 1fr; } .project-photo { min-height: 540px; } .project-photo img { object-fit: contain; } .project-umx .umx-visual { grid-row: 1; } .project-meta { margin-bottom: 28px; } .story-grid,.story-summary { gap: 36px; } .umx-system { gap: 35px; padding: 35px; } .work-row { grid-template-columns: 35px 1fr 1.2fr; gap: 18px; } }
-@media (max-width: 600px) { .project-copy { padding: 28px 24px; } .project-photo { min-height: 430px; } .project-copy h3 { font-size: 35px; } .umx-visual { padding: 25px 20px; min-height: 540px; } .umx-visual-bottom { flex-direction: column; gap: 4px; } .story-grid,.story-summary { grid-template-columns: 1fr; } .story-intro { padding: 55px 0 35px; } .story-intro .lead { font-size: 17px; } .story-header .brand { font-size: 22px; } .story-next .container { align-items: flex-start; flex-direction: column; } .story-summary { padding-bottom: 35px; gap: 12px; } .umx-system { grid-template-columns: 1fr; padding: 30px 24px; } .umx-system h2 { font-size: 30px; } .umx-system .diagram-caption { margin-top: 22px; } .story-work { padding-top: 40px; padding-bottom: 40px; } .work-row { grid-template-columns: 28px 1fr; gap: 12px; padding: 28px 0; } .work-row > :last-child { grid-column: 2; } }
+@media (max-width: 600px) { .project-copy { padding: 28px 24px; } .project-photo { min-height: 430px; } .project-copy h2 { font-size: 35px; } .umx-visual { padding: 25px 20px; min-height: 540px; } .umx-visual-bottom { flex-direction: column; gap: 4px; } .story-grid,.story-summary { grid-template-columns: 1fr; } .story-intro { padding: 55px 0 35px; } .story-intro .lead { font-size: 17px; } .story-header .brand { font-size: 22px; } .story-next .container { align-items: flex-start; flex-direction: column; } .story-summary { padding-bottom: 35px; gap: 12px; } .umx-system { grid-template-columns: 1fr; padding: 30px 24px; } .umx-system h2 { font-size: 30px; } .umx-system .diagram-caption { margin-top: 22px; } .story-work { padding-top: 40px; padding-bottom: 40px; } .work-row { grid-template-columns: 28px 1fr; gap: 12px; padding: 28px 0; } .work-row > :last-child { grid-column: 2; } }
 @media (prefers-reduced-motion: reduce) { .project-photo:hover img { transform: none; } }
